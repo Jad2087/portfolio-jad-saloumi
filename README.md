@@ -11,4 +11,4 @@ Lien : https://www.figma.com/design/HJmsws8cr8Vcji1oAR60W5/moodboard-web-5?node-
 Multipage
 
  ## Le choix de ta composante Vue.js
- 
+ Dark mode / Light mode toggle
