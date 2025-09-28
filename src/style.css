@@ -119,7 +119,7 @@ body {
 
 .a-propos h2 {
     font-size: 2.2rem;
-    margin-bottom: 25px; 
+    margin-bottom: 50px; 
    color: #d400ff;    
 }
 
@@ -129,12 +129,12 @@ body {
 }
 
 .contact {
-margin-top: 30px;
+margin-top: 50px;
 
 }
 
 .contact p {
-margin: 8px 0;
+margin: 100 0;
 font-weight: 500;
 }
 
