@@ -106,6 +106,38 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
+/* A propos de moi */
+
+.a-propos {
+    max-width: 900px;
+    margin: 100px auto; 
+    padding: 40px 20px;
+    text-align: left;
+    color: #000000;
+    line-height: 1.8;
+}
+
+.a-propos h2 {
+    font-size: 2.2rem;
+    margin-bottom: 25px; 
+   color: #d400ff;    
+}
+
+.a-propos p {
+    font-size: 1.15rem;
+    margin-bottom: 15px;
+}
+
+.contact {
+margin-top: 30px;
+
+}
+
+.contact p {
+margin: 8px 0;
+font-weight: 500;
+}
+
 /* Footer */
 
 footer {
