@@ -183,6 +183,46 @@ font-weight: 500;
   text-align: left;
 }
 
+
+.skills {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.skills h2 {
+  text-align: left;
+  color: #d400ff;
+  font-size: 2.2rem;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+/* compétences */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; 
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px; 
+  border-radius: 8px;
+  padding: 1rem;
+  
+}
+
+.skill-card img {
+  width: 100px; 
+  height: auto;
+  margin-bottom: 0.8rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
