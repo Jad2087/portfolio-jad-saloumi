@@ -83,10 +83,6 @@ body {
 .titre {
     font-size: clamp(3rem, 10vw, 8rem); 
     color: #000000; 
-    margin: 0;
-    letter-spacing: -2px;
-    font-weight: 900;
-    line-height: 1.1;
 }
 
 .titre:hover {
@@ -128,9 +124,9 @@ body {
     margin-bottom: 15px;
 }
 
+/* Contact */
 .contact {
 margin-top: 50px;
-
 }
 
 .contact p {
@@ -138,8 +134,56 @@ margin: 100 0;
 font-weight: 500;
 }
 
-/* Footer */
+/*Mes projets */
 
+.projets h2 {
+    max-width: 1500px;
+    margin: 100px auto; 
+    padding: 40px 20px;
+    text-align: left;
+    color: #000000;
+    line-height: 1.8;
+    font-size: 2.2rem;
+    margin-bottom: 50px; 
+    color: #d400ff; 
+}
+
+.grille-projets {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 2rem; 
+  max-width: 1500px; 
+  margin: 0 auto; 
+  padding: 2rem 1rem; 
+}
+
+/* Chaque carte-container prend environ la moitié de la largeur de la grille */
+.carte-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  flex: 1 1 calc(50% - 1rem); /* largeur des cartes légèrement inférieure à 50% pour l’espace */
+  box-sizing: border-box;
+  margin-bottom: 2rem; 
+}
+
+/* Image */
+.carte-projet img {
+  width: 100%; 
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Titre sous la carte */
+.carte-container h3 {
+  margin-top: 1.3rem;
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: left;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
