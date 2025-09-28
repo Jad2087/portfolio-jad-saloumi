@@ -221,6 +221,7 @@ font-weight: 500;
   width: 100px; 
   height: auto;
   margin-bottom: 0.8rem;
+    filter: grayscale(100%);
 }
 
 /* Footer */
