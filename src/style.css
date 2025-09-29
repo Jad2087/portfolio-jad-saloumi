@@ -37,6 +37,17 @@ body {
     font-size: 1.5rem;
 }
 
+/* Navigations Versions Écrans */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+    padding: 20px;
+    gap: 40px;
+  }
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -68,7 +79,7 @@ body {
     text-decoration-thickness: 3px;
 }
 
-/* Contenenue principal */
+/* Contenue principal */
 
 .principal {
     height: 100vh; 
@@ -80,12 +91,25 @@ body {
     padding: 0 20px; 
 }
 
+@media (max-width: 1230px) {
+  .principal {
+    flex-direction: column;
+    padding: 130px;
+    gap: 40px;
+    justify-content: flex-start;
+  }
+}
+
+/* Port */
+
 .titre {
     font-size: clamp(3rem, 10vw, 8rem); 
     color: #000000; 
     box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
     margin-left: 30px;
 }
+
+/* folio */ 
 
 .titre2 {
   font-size: clamp(3rem, 10vw, 8rem); 
@@ -94,12 +118,10 @@ body {
   margin-left: 30px;
 }
 
+/* Photo de moi */
+
 .principal-photo {
-    border-radius: 15px; 
-    max-width: 300px; 
-    width: 100%; 
-    height: auto; 
-    margin-top: 20px; 
+    max-width: 300px;   
     margin-left: 30px;
     box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
 }
@@ -127,6 +149,7 @@ body {
 }
 
 /* Contact */
+
 .contact {
 margin-top: 50px;
 }
