@@ -105,7 +105,7 @@ body {
 /* A propos de moi */
 
 .a-propos {
-    max-width: 900px;
+  max-width: 1040px;
     margin: 100px auto; 
     padding: 40px 20px;
     text-align: left;
@@ -137,7 +137,7 @@ font-weight: 500;
 /*Mes projets */
 
 .projets h2 {
-    max-width: 1500px;
+  max-width: 1040px;
     margin: 100px auto; 
     padding: 40px 20px;
     text-align: left;
@@ -154,20 +154,19 @@ font-weight: 500;
   gap: 2rem; 
   max-width: 1500px; 
   margin: 0 auto; 
-  padding: 2rem 1rem; 
+  padding: 2rem 1rem;
+  justify-content: center; 
 }
 
-/* Chaque carte-container prend environ la moitié de la largeur de la grille */
+/* Les 4 cartes */
 .carte-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  flex: 1 1 calc(50% - 1rem); /* largeur des cartes légèrement inférieure à 50% pour l’espace */
+  width: 500px;
   box-sizing: border-box;
   margin-bottom: 2rem; 
 }
 
-/* Image */
 .carte-projet img {
   width: 100%; 
   aspect-ratio: 4 / 3;
@@ -175,7 +174,6 @@ font-weight: 500;
   display: block;
 }
 
-/* Titre sous la carte */
 .carte-container h3 {
   margin-top: 1.3rem;
   font-size: 1.2rem;
@@ -185,7 +183,7 @@ font-weight: 500;
 
 
 .skills {
-  max-width: 1200px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
