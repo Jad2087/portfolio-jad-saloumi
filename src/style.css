@@ -83,23 +83,25 @@ body {
 .titre {
     font-size: clamp(3rem, 10vw, 8rem); 
     color: #000000; 
+    box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
+    margin-left: 30px;
 }
 
-.titre:hover {
-    color: #d400ff;
-    text-decoration: underline;
-    text-decoration-thickness: 10px;
+.titre2 {
+  font-size: clamp(3rem, 10vw, 8rem); 
+  color: #000000; 
+  box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
+  margin-left: 30px;
 }
 
 .principal-photo {
-    border-radius: 35px; 
-    max-width: 350px; 
+    border-radius: 15px; 
+    max-width: 300px; 
     width: 100%; 
     height: auto; 
-    object-fit: cover; 
     margin-top: 20px; 
     margin-left: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
 }
 
 /* A propos de moi */
