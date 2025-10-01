@@ -130,47 +130,48 @@ body {
 
 .a-propos {
   max-width: 1040px;
-    margin: 100px auto; 
-    padding: 40px 20px;
-    text-align: left;
-    color: #000000;
-    line-height: 1.8;
+  margin: 100px auto; 
+  text-align: left;
+  color: #000000;
+  line-height: 1.8;
 }
 
 .a-propos h2 {
-    font-size: 2.2rem;
-    margin-bottom: 50px; 
-   color: #d400ff;    
+  font-size: 2.2rem;
+  margin-bottom: 50px; 
+  color: #d400ff;    
 }
 
 .a-propos p {
-    font-size: 1.15rem;
-    margin-bottom: 15px;
+  font-size: 1.15rem;
+  margin-bottom: 15px;
 }
 
 /* Contact */
 
 .contact {
-margin-top: 50px;
+  margin-top: 50px;
 }
 
 .contact p {
-margin: 100 0;
-font-weight: 500;
+  margin: 100 0;
+  font-weight: 500;
 }
 
 /*Mes projets */
 
+.projets{
+  padding: 100px;
+}
 .projets h2 {
   max-width: 1040px;
-    margin: 100px auto; 
-    padding: 40px 20px;
-    text-align: left;
-    color: #000000;
-    line-height: 1.8;
-    font-size: 2.2rem;
-    margin-bottom: 50px; 
-    color: #d400ff; 
+  margin: 100px auto; 
+  padding: 40px 20px;
+  text-align: left;
+  color: #000000;
+  font-size: 2.2rem;
+  margin-bottom: 50px; 
+  color: #d400ff; 
 }
 
 .grille-projets {
@@ -184,36 +185,28 @@ font-weight: 500;
 }
 
 /* Les 4 cartes */
-.carte-container {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
+.carte-projet {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 black;
+  display: flex;  
+  padding: 1.5rem;
   box-sizing: border-box;
-  margin-bottom: 2rem; 
 }
 
-.carte-projet img {
-  width: 100%; 
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-}
-
-.carte-container h3 {
-  margin-top: 1.3rem;
+.carte-projet h3 {
   font-size: 1.2rem;
   color: #000000;
-  text-align: left;
+  margin: 0;       
 }
 
+/* Compétences */
 
 .skills {
   max-width: 1040px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
-
-/* compétences */
 
 .skills-grid {
   display: flex;
@@ -251,7 +244,7 @@ font-weight: 500;
 .contactez-moi {
   text-align: center;
   margin: 0 auto;
-  padding: 100px;
+  padding: 200px;
 }
 
 /* Logo des contacts */
