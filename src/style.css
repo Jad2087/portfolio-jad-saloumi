@@ -131,6 +131,7 @@ body {
 .a-propos {
   max-width: 1040px;
   margin: 100px auto; 
+  padding: 40px 20px;
   text-align: left;
   color: #000000;
   line-height: 1.8;
@@ -160,9 +161,6 @@ body {
 
 /*Mes projets */
 
-.projets{
-  padding: 100px;
-}
 .projets h2 {
   max-width: 1040px;
   margin: 100px auto; 
@@ -265,12 +263,11 @@ body {
 } 
 
 .texte-contact {
-color: #d400ff;
+  color: #d400ff;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
     color: rgb(0, 0, 0);
 }
