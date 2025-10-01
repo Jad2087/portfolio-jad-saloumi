@@ -232,7 +232,6 @@ font-weight: 500;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
@@ -247,11 +246,30 @@ font-weight: 500;
   filter: grayscale(100%);
 }
 
+/* Phrase Contactez-moi */
+
 .contactez-moi {
   text-align: center;
   margin: 0 auto;
   padding: 100px;
 }
+
+/* Logo des contacts */
+
+.contact-logo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 73px;
+  height: 73px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin: 0 10px;
+}
+
+.contact-logo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+} 
 
 .texte-contact {
 color: #d400ff;
