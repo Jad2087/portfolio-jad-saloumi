@@ -103,6 +103,7 @@ body {
 /* Port */
 
 .titre {
+  display: flex;
     font-size: clamp(3rem, 10vw, 8rem); 
     color: #000000; 
     box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
@@ -129,6 +130,7 @@ body {
 /* A propos de moi */
 
 .a-propos {
+  display: grid;
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
