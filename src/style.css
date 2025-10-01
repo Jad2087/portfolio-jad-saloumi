@@ -244,8 +244,20 @@ font-weight: 500;
   width: 100px; 
   height: auto;
   margin-bottom: 0.8rem;
-    filter: grayscale(100%);
+  filter: grayscale(100%);
 }
+
+
+.contactez-moi {
+  text-align: center;
+  margin: 0 auto;
+  padding: 100px;
+}
+
+.texte-contact {
+color: #d400ff;
+}
+
 
 /* Footer */
 footer {
