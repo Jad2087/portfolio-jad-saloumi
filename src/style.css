@@ -217,7 +217,7 @@ body {
   background: #fff;
   border-radius: 12px;
   padding: 1rem;
-  width: 100px;
+  width: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,7 +232,7 @@ body {
 }
 
 .skill-card img {
-  width: 60px;
+  width: 70px;
   height: auto;
   filter: grayscale(100%);
   margin-bottom: 0.5rem;
