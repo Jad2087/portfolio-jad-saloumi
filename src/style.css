@@ -201,6 +201,18 @@ body {
 }
 
 /* Compétences */
+
+.skills h2 {
+  max-width: 1040px;
+  margin: 100px auto; 
+  padding: 40px 20px;
+  text-align: left;
+  color: #000000;
+  font-size: 2.2rem;
+  margin-bottom: 50px; 
+  color: #d400ff; 
+}
+
 .skills {
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -222,13 +234,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .skill-card img {
