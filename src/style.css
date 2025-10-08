@@ -13,7 +13,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Batman", sans-serif;
+    font-family: "Batman";
     color: #ffffff;
 }
 
@@ -21,16 +21,11 @@ body {
 
 .navbar {
     position: fixed;
-    top: 0;
     width: 100%;
     height: 80px; 
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 40px;
-    color: rgb(0, 0, 0);
-    font-family: "Batman", sans-serif;
-    z-index: 1000;
     box-sizing: border-box;
 }
 
@@ -55,13 +50,12 @@ body {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
 }
 
 .nav a:hover {
     color: #d400ff;
     text-decoration: underline;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 3px; 
 }
 
 .js,
@@ -69,10 +63,10 @@ body {
     display: flex;
     align-items: center;
     font-size: 20px;
-    cursor: pointer;
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
+
 .js:hover,
 .mode:hover {
     color: #d400ff;
@@ -88,7 +82,6 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ffffff; 
-    text-align: center;
     padding: 0 20px; 
 }
 
@@ -101,14 +94,13 @@ body {
   }
 }
 
-/* Port */
+/* Port */  
 
 .titre {
-  display: flex;
-    font-size: clamp(3rem, 10vw, 8rem); 
-    color: #000000; 
-    box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
-    margin-left: 30px;
+  font-size: clamp(3rem, 10vw, 8rem); 
+  color: #000000; 
+  box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
+  margin-left: 30px;
 }
 
 /* folio */ 
@@ -123,9 +115,9 @@ body {
 /* Photo de moi */
 
 .principal-photo {
-    max-width: 300px;   
-    margin-left: 30px;
-    box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
+  max-width: 300px;   
+  margin-left: 30px;
+  box-shadow: 0 4px 10px rgba(212, 0, 255, 0.5);
 }
 
 /* A propos de moi */
@@ -135,9 +127,8 @@ body {
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
-  text-align: left;
   color: #000000;
-  line-height: 1.8;
+ 
 }
 
 .a-propos h2 {
@@ -282,6 +273,6 @@ body {
 
 /* Footer */
 footer {
-    text-align: center;
-    color: rgb(0, 0, 0);
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
