@@ -29,17 +29,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Navigations Versions Écrans */
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    height: auto;
-    padding: 20px;
-    gap: 40px;
-  }
-}
-
 .nav {
     display: flex;
     align-items: center;
@@ -88,15 +77,16 @@ body {
 @media (max-width: 768px) {
   /* NAVBAR */
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
     padding: 20px 10px;
   }
 
   .nav {
-    flex-direction: column;
-    gap: 10px;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -186,7 +176,6 @@ body {
     padding: 1rem;
   }
 }
-
 
 /* Port */  
 
@@ -303,7 +292,6 @@ body {
 }
 
 .skills {
-  margin: 0 auto;
   padding: 2rem 1rem;
 }
 
