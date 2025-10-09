@@ -85,14 +85,108 @@ body {
     padding: 0 20px; 
 }
 
-@media (max-width: 1230px) {
+@media (max-width: 768px) {
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .js, .mode {
+    font-size: 16px;
+  }
+
+  /* SECTION PRINCIPALE */
   .principal {
     flex-direction: column;
-    padding: 130px;
-    gap: 40px;
-    justify-content: flex-start;
+    padding: 100px 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .titre, .titre2 {
+    margin-left: 0;
+  }
+
+  .principal-photo {
+    margin-left: 0;
+    max-width: 200px;
+    width: 100%;
+  }
+
+  /* À PROPOS */
+  .a-propos {
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* COMPÉTENCES */
+  .skills h2 {
+    text-align: center;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+
+  .skill-card {
+    width: 80px;
+    padding: 0.5rem;
+  }
+
+  .skill-card img {
+    width: 50px;
+  }
+
+  /* PROJETS */
+  .projets h2 {
+    text-align: center;
+  }
+
+  .texte-contact {
+    text-align: center;
+  }
+
+  .grille-projets {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .carte-projet {
+    width: 90%;     
+    height: 120px;  
+  }
+
+  /* CONTACTEZ MOI */
+  .contactez-moi {
+    text-align: center;
+    padding: 100px 20px;
+  }
+
+  .logos-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-logo {
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
   }
 }
+
 
 /* Port */  
 
@@ -159,7 +253,6 @@ body {
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
-  text-align: left;
   color: #000000;
   font-size: 2.2rem;
   margin-bottom: 50px; 
@@ -181,9 +274,14 @@ body {
   background-color: white;
   border: 2px solid black;
   box-shadow: 4px 4px 0 black;
-  display: flex;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 235px;        /* Largeur fixe */
+  height: 125px;       /* Hauteur fixe */
   padding: 1.5rem;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .carte-projet h3 {
@@ -198,7 +296,6 @@ body {
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
-  text-align: left;
   color: #000000;
   font-size: 2.2rem;
   margin-bottom: 50px; 
@@ -213,7 +310,7 @@ body {
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.8rem;
   justify-content: center;
 }
 
@@ -231,23 +328,12 @@ body {
 
 .skill-card img {
   width: 70px;
-  height: auto;
-  filter: grayscale(100%);
-  margin-bottom: 0.5rem;
 }
 
 .skill-card p {
   font-size: 0.85rem;
-  color: #333;
+  color: #000000;
   margin: 0;
-}
-
-/* Phrase Contactez-moi */
-
-.contactez-moi {
-  text-align: center;
-  margin: 0 auto;
-  padding: 200px;
 }
 
 /* Logo des contacts */
@@ -267,12 +353,20 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 } 
 
+/* Phrase Contactez-moi */
 .texte-contact {
   color: #d400ff;
+  text-align: center;
+}
+
+.contactez-moi {
+  text-align: center;
+  margin: 0 auto;
+  padding: 200px;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: black;
 }
