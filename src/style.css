@@ -86,7 +86,7 @@ body {
   .nav {
     display: flex;
     gap: 15px;
-    flex-direction: row;
+     flex-direction: row;
     align-items: center;
   }
 
@@ -289,10 +289,6 @@ body {
   font-size: 2.2rem;
   margin-bottom: 50px; 
   color: #d400ff; 
-}
-
-.skills {
-  padding: 2rem 1rem;
 }
 
 .skills-grid {
