@@ -22,55 +22,34 @@ body {
     padding: 40px 40px;
 }
 
-.nav {
-    display: flex;
-    justify-content: center;
-}
-
 .nav a {
-    color: rgb(0, 0, 0);
+    color: black;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
     background-color: #d400ff;
+    padding: 8px 16px;
 }
 
 .nav a:hover {
-    color: white;
-    text-decoration: underline;
-    text-decoration-thickness: 3px; 
+  color: white;
 }
-
-.mode {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-    background-color: #d400ff;
-}
-
-.mode:hover {
-    color: white;
-    text-decoration: underline; 
-    text-decoration-thickness: 3px;
-}
-
-@media(min-width: 768px){
-    .container-fluid {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .mode {
-        margin-top: 0;
-    }
-}
-
 
 @media (max-width: 768px) {
+
+   .navbar {
+    padding: 20px 10px;
+  }
+
+  .nav {
+    flex-direction: column; 
+    gap: 10px;
+  }
+
+  .nav a {
+    text-align: center;
+    font-size: 17px;
+  }
 
   /* À PROPOS */
   .a-propos {
