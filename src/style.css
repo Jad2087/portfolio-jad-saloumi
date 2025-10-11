@@ -20,7 +20,6 @@ body {
 /* Navigations */
 
 .navbar {
-    position: fixed;
     width: 100%;
     height: 80px; 
     display: flex;
@@ -347,6 +346,22 @@ body {
   text-align: center;
   margin: 0 auto;
   padding: 200px;
+}
+
+/* Bouton retour en haut */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d400ff;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
 
 /* Footer */
