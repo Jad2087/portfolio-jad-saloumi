@@ -62,19 +62,6 @@ body {
     text-align: center;
   }
 
-  .skills-grid {
-    justify-content: center;
-  }
-
-  .skill-card {
-    width: 80px;
-    padding: 0.5rem;
-  }
-
-  .skill-card img {
-    width: 50px;
-  }
-
   /* PROJETS */
   .projets h2 {
     text-align: center;
@@ -157,7 +144,6 @@ body {
     color: white;
 }
 
-
 /* Responsive pour petits écrans */
 @media (max-width: 768px) {
   .prenom {
@@ -175,7 +161,6 @@ body {
     padding: 15px 25px;
   }
 }
-
 
 /* A propos de moi */
 .a-propos {
@@ -266,7 +251,7 @@ body {
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.8rem;
+  gap: 2rem;
   justify-content: center;
 }
 
@@ -283,7 +268,7 @@ body {
 }
 
 .skill-card img {
-  width: 70px;
+  width: 80px;
 }
 
 .skill-card p {
