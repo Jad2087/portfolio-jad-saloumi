@@ -195,14 +195,15 @@ body {
 
 /*Mes projets */
 .projets h2 {
+  display: grid;
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
   color: #000000;
-  font-weight: bold;
   font-size: 2.2rem;
-  margin-bottom: 50px; 
-  color: #d400ff; 
+  margin-bottom: 10px; 
+  font-weight: bold;
+  color: #d400ff;
 }
 
 .grille-projets {
@@ -238,14 +239,15 @@ body {
 
 /* Compétences */
 .skills h2 {
+  display: grid;
   max-width: 1040px;
   margin: 100px auto; 
   padding: 40px 20px;
   color: #000000;
   font-size: 2.2rem;
+  margin-bottom: 20px; 
   font-weight: bold;
-  margin-bottom: 50px; 
-  color: #d400ff; 
+  color: #d400ff;   
 }
 
 .skills-grid {
@@ -259,7 +261,7 @@ body {
   background: #fff;
   border-radius: 12px;
   padding: 1rem;
-  width: 117px;
+  width: 113px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -277,33 +279,72 @@ body {
   margin: 0;
 }
 
-/* Logo des contacts */
-.contact-logo {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  width: 115px;
-  height: 115px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Conteneur global */
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.contact-logo:hover {
+/* Carte individuelle */
+.contact-card {
+  margin-top: 200px;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 113px;
+  height: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-} 
+}
+
+/* Logo */
+.contact-logo {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+/* Nom du logo */
+.contact-card p {
+  color: #000;
+  font-weight: bold;
+  margin: 0;
+}
 
 /* Phrase Contactez-moi */
 .texte-contact {
   color: #d400ff;
-  margin-top: 20px;
+  margin-top: 40px;
+  font-size: 1.5rem;
 }
 
-.contactez-moi {
-  background-color: transparent;
-  text-align: center;
-  padding: 120px 20px;
+@media (max-width: 768px) {
+  .contact-grid {
+    gap: 1.2rem;
+  }
+
+  .contact-card {
+    width: 100px;
+    padding: 1rem;
+  }
+
+  .contact-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+  }
 }
+
 
 /* Bouton retour en haut */
 .scroll-top {
