@@ -4,7 +4,7 @@ const cartesprojet = document.querySelectorAll('.carte-projet');
 cartesprojet.forEach(carte => {
   carte.addEventListener('click', () => {
     const idmodal = carte.getAttribute('data-modal'); // récupère id du modal 
-    const modal = document.getElementById(idmodal); // trouve le modal 
+    const modal = document.getElementById(idmodal); // trouve le modal
     modal.style.display = 'block'; // affiche le modal
   });
 });
