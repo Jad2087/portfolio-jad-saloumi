@@ -15,6 +15,6 @@ const btnFermer = document.querySelectorAll('.close');
 btnFermer.forEach(bouton => {
   bouton.addEventListener('click', () => {
     const modal = bouton.closest('.modal'); // trouve le modal parent
-    modal.style.display = 'none';           // le cache
+    modal.style.display = 'none'; // le cache
   });
 });

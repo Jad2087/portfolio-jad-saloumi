@@ -238,9 +238,9 @@ body {
 
 /* Effet hover */
 .carte-projet:hover {
-  transform: translateY(-6px);        /* léger décalage vers le haut */
-  box-shadow: 6px 6px 12px rgba(0,0,0,0.2); /* ombre plus marquée */
-  border-color: #d400ff;              /* couleur du bord change */
+  transform: translateY(-6px);
+  box-shadow: 6px 6px 12px rgba(0,0,0,0.2); 
+  border-color: #d400ff;
 }
 
 /* Compétences */
