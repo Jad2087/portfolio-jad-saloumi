@@ -18,3 +18,21 @@ btnFermer.forEach(bouton => {
     modal.style.display = 'none'; // le cache
   });
 });
+
+// Fermeture et pause automatique vidéo
+document.querySelectorAll('.modal').forEach(modal => {
+
+const video = modal.querySelector('video');
+const closeBtn = modal.querySelector('.close');
+
+  closeBtn.addEventListener('click', () => {
+    // on ferme le modal
+    modal.style.display = 'none';
+    // si une vidéo est présent il faut la mettre pause
+    if (video) {
+      video.pause();
+      video.currentTime = 0; // il remet la vidéo du début
+    }
+  });
+});
+
