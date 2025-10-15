@@ -136,14 +136,6 @@ body {
   z-index: 2;
 }
 
-.nom:hover {
-    color: white;
-}
-
-.prenom:hover {
-    color: white;
-}
-
 /* Responsive pour petits écrans */
 @media (max-width: 768px) {
   .prenom {
@@ -229,6 +221,7 @@ body {
   padding: 1.5rem;
   text-align: center;
   cursor: pointer;
+   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .carte-projet h3 {
@@ -476,6 +469,97 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
+}
+
+/* Vue. js Dark Mode et Light Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .nav a {
+    background-color: #d400ff;
+    color: #ffffff;
+}
+
+.dark-mode .nav a:hover {
+    background-color: #d400ff;
+    color: #1e1e1e;
+}
+
+/* Portfolio titre */
+.dark-mode .portfolio-title {
+    background-color: #1e1e1e;
+    color: #d400ff;
+}
+
+/* Prenom et Nom */
+.dark-mode .prenom,
+.dark-mode .nom {
+    background-color: #d400ff;
+    color: #ffffff;
+}
+
+/* À propos en blanc */
+.dark-mode .a-propos p {
+    color: #ffffff;
+}
+
+/* Compétences Dark Mode */
+.dark-mode .skill-card {                    
+    border: 2px solid #ffffff;          
+}
+
+/* Cartes projets */
+.dark-mode .carte-projet {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.dark-mode .carte-projet:hover {
+    transform: translateY(-6px);
+    box-shadow: 6px 6px 16px rgba(0,0,0,0.7);
+    border-color: #d400ff;
+}
+
+.dark-mode .carte-projet h3 {
+    color: #ffffff;
+}
+
+/* Compétences et contact */
+.dark-mode .skill-card,
+.dark-mode .contact-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Modale */
+.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #d400ff;
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.7);
+}
+
+/* Contact cards - Dark Mode */
+.dark-mode .contact-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.dark-mode .contact-card:hover {
+    transform: translateY(-4px);
+    border-color: #d400ff;
+}
+
+/* Footer en blanc */
+.dark-mode footer {
+    color: #ffffff;
 }
 
 /* Footer */

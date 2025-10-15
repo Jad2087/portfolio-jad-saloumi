@@ -1,3 +1,21 @@
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      isDarkMode: false
+    };
+  },
+  methods: {
+    toggleDarkMode() {
+      this.isDarkMode = !this.isDarkMode;
+
+      // Ajoute ou retire la classe sur le body
+      document.body.classList.toggle('dark-mode', this.isDarkMode);
+    }
+  }
+}).mount('#app');
+
 // Ouvrir le modal quand on clique sur une carte de projet
 const cartesprojet = document.querySelectorAll('.carte-projet');
 
@@ -33,6 +51,14 @@ const closeBtn = modal.querySelector('.close');
       video.pause();
       video.currentTime = 0; // il remet la vidéo du début
     }
+     // Stop vidéo YouTube iframe présente
+    const iframe = modal.querySelector('iframe');
+    if (iframe) {
+      iframe.src = iframe.src; // réinitialise le src pour arreter la vidéo
+    }
   });
 });
+
+
+
 

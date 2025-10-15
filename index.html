@@ -12,94 +12,122 @@
 </head>
 
 <body>
-  
-<nav class="navbar navbar-expand-md">
-  <div class="container-fluid d-flex flex-column align-items-center">
-    <!-- Liens des navigations-->
-    <div class="nav d-flex justify-content-center gap-4">
-      <a href="#a-propos">À propos</a>
-      <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
-      <a href="#">Dark MØde</a>
-    </div>
-  </div>
-</nav>
+<div id="app" :class="{'dark-mode': isDarkMode}">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid d-flex flex-column align-items-center">
+      
+      <!-- Liens de navigation -->
+      <div class="nav d-flex justify-content-center gap-4">
+        <a href="#a-propos">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
 
-  <!--Le contenue principal-->
+        <!-- Bouton Dark/Light Mode -->
+        <a href="#" 
+           class="mode-btn" 
+           @click.prevent="toggleDarkMode">
+          {{ isDarkMode ? 'Light MØde' : 'Dark MØde' }}
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+<!-- Contenu principal -->
 <main class="principal d-flex justify-content-center align-items-center vh-100">
   <div class="portfolio-container position-relative text-center">
+    
+    <!-- Titre principal -->
     <h1 class="portfolio-title position-relative">Portfolio</h1>
+    
+    <!-- Prénom et Nom stylisés -->
     <span class="prenom position-absolute">Jad</span>
     <span class="nom position-absolute">Saloumi</span>
+    
   </div>
 </main>
 
-   <!-- Section À propos -->
-  <section class="a-propos" id="a-propos">
-    <h2>À propos</h2>
-    <p>
-  Je m'appelle Jad Saloumi et je suis diplômé en 
-  Techniques d’intégration multimédia. Passionné par le 
-  développement web et le designer web, 
-  j’allie créativité et compétences techniques pour concevoir des solutions 
-  numériques modernes et efficaces. Je suis à la recherche d’un poste où je 
-  pourrai contribuer à des projets innovants tout en mettant à profit mon sens 
-  du design et mes connaissances en développement web.
-</p>
+  <!-- Section À propos -->
+<section class="a-propos" id="a-propos">
+  
+  <!-- Titre de la section -->
+  <h2>À propos</h2>
+  
+  <!-- Texte de présentation -->
+  <p>
+    Je m'appelle Jad Saloumi et je suis diplômé en 
+    Techniques d’intégration multimédia. Passionné par le 
+    développement web et le design web, 
+    j’allie créativité et compétences techniques pour concevoir des solutions 
+    numériques modernes et efficaces. Je suis à la recherche d’un poste où je 
+    pourrai contribuer à des projets innovants tout en mettant à profit mon sens 
+    du design et mes connaissances en développement web.
+  </p>
 
-      <!-- Bloc contact -->
+  <!-- Bloc contact -->
   <div class="contact">
     <p>Laval, Québec</p>
     <p>saloumijad@gmail.com</p>
     <p>514-568-8183</p>
   </div>
-  </section>
+
+</section>
+
+ <!-- Section Compétences -->
+<section class="skills" id="skills">
   
-  
- <!-- Mes compétences en logo -->
-<section class="skills">
+  <!-- Titre de la section -->
   <h2>Compétences</h2>
+  
+  <!-- Grille des compétences -->
   <div class="skills-grid">
+    
     <div class="skill-card">
-      <img src="./img/visual.png">
+      <img src="./img/visual.png" alt="Visual Studio">
       <p>Visual Studio</p>
     </div>
 
     <div class="skill-card">
-      <img src="./img/html.png">
+      <img src="./img/html5.png" alt="HTML5">
       <p>HTML</p>
     </div>
 
     <div class="skill-card">
-      <img src="./img/css.png">
-      <p>Css</p>
+      <img src="./img/css3.png" alt="CSS3">
+      <p>CSS</p>
     </div>
 
     <div class="skill-card">
-      <img src="./img/javascript.png">
+      <img src="./img/javascript.png" alt="JavaScript">
       <p>Java Script</p>
     </div>
 
     <div class="skill-card">
-      <img src="./img/wrdpress.png">
-      <p>Wordpress</p>
+      <img src="./img/wrdpress.png" alt="WordPress">
+      <p>WordPress</p>
     </div>
 
-        <div class="skill-card">
-      <img src="./img/figma.png">
+    <div class="skill-card">
+      <img src="./img/figma.png" alt="Figma">
       <p>Figma</p>
     </div>
-    
+
     <div class="skill-card">
-      <img src="./img/davinci-resolve.png">
+      <img src="./img/davinci-resolve.png" alt="Davinci Resolve">
       <p>Davinci Resolve</p>
     </div>
+
   </div>
 </section>
 
-  <section class="projets" id="projets">
+ <!-- Section Projets -->
+<section class="projets" id="projets">
+  
+  <!-- Titre de la section -->
   <h2>Projets</h2>
 
+  <!-- Grille des projets -->
   <div class="grille-projets">
 
     <!-- Projet 1 -->
@@ -134,7 +162,8 @@
 </section>
 
 <!-- Modals -->
-<!-- Batman -->
+
+<!-- Modal Batman -->
 <div id="modal-batman" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -146,18 +175,17 @@
   </div>
 </div>
 
-<!-- Animation 3D -->
+<!-- Modal Animation 3D -->
 <div id="modal-3d" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-
     <h3>Animation 3D</h3>
     <p>Création d’une animation 3D dans un environnement fictif.</p>
     <p><strong>Rôle :</strong> Modeleur et animateur 3D</p>
     <p><strong>Technologies :</strong> Maya 3D et Davinci Resolve</p>
     <p><strong>Type :</strong> Individuel</p>
 
-    <!-- Conteneur de la vidéo -->
+    <!-- Vidéo -->
     <div class="video-container">
       <h4 class="video-title">Entre les murs</h4>
       <video controls>
@@ -168,11 +196,10 @@
   </div>
 </div>
 
-<!-- Magazine -->
+<!-- Modal Magazine -->
 <div id="modal-magazine" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-
     <h3>Magazine</h3>
     <p>Création d’un magazine numérique interactif.</p>
     <p><strong>Rôle :</strong> Développement et design web</p>
@@ -180,13 +207,14 @@
     <p><strong>Type :</strong> Équipe de 2</p>
     <p><strong>Partenaire :</strong> Benjamin Ferland (web design)</p>
 
-    <!-- Vidéo intégrée depuis YouTube -->
+    <!-- Vidéo YouTube -->
     <div class="video-container">
       <h4 class="video-title">GameCraft</h4>
       <iframe 
         width="100%" 
         height="315" 
-        src="https://www.youtube.com/embed/CcfkoHW8AtQ"  
+        src="https://www.youtube.com/embed/CcfkoHW8AtQ" 
+        title="Présentation de GameCraft" 
         frameborder="0" 
         allow="encrypted-media" 
         allowfullscreen>
@@ -195,49 +223,54 @@
   </div>
 </div>
 
-<!-- Pixel Art -->
+<!-- Modal Pixel Art -->
 <div id="modal-pixel" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-
     <h3>Pixel Art – Nico</h3>
     <p>Création d’un jeu 2D en style pixel art inspiré des classiques rétro.</p>
     <p><strong>Rôle :</strong> Développement d’un jeu vidéo 2D</p>
     <p><strong>Technologies :</strong> HTML, CSS, JavaScript, Phaser</p>
     <p><strong>Type :</strong> Individuel</p>
 
-    <!-- Image cliquable vers le site du jeu -->
+    <!-- Lien vers le jeu -->
     <div class="pixelart-container">
-       <p class="pixelart-texte">Clique sur l’image pour jouer à <strong>Nico</strong> sur itch.io</p>
-         <h4 class="video-title">Nico</h4>
-      <a href="https://ramb1o.itch.io/nico">
-        <img src="./img/pixal-art.png" class="pixelart-image">
+      <p class="pixelart-texte">Clique sur l’image pour jouer à <strong>Nico</strong> sur itch.io</p>
+      <h4 class="video-title">Nico</h4>
+      <a href="https://ramb1o.itch.io/nico" target="_blank">
+        <img src="./img/pixal-art.png" class="pixelart-image" alt="Pixel Art Nico">
       </a>
     </div>
   </div>
 </div>
 
-
-<!-- Contactez-moi -->
+<!-- Section Contact -->
 <section id="contact" class="contactez-moi text-center py-5">
   <div class="container">
+
+    <!-- Titre Contact -->
     <p class="texte-contact fs-4 fw-bold mb-4">Contactez-moi</p>
+
+    <!-- Grille des contacts -->
     <div class="contact-grid d-flex justify-content-center gap-4">
 
+      <!-- GitHub -->
       <div class="contact-card">
-        <a href="https://github.com/Jad2087">
+        <a href="https://github.com/Jad2087" target="_blank">
           <img src="./img/github.png" class="contact-logo" alt="GitHub">
-           <span>GitHub</span>
+          <span>GitHub</span>
         </a>
       </div>
 
+      <!-- LinkedIn -->
       <div class="contact-card">
-        <a href="https://www.linkedin.com/in/jad-saloumi-295065324/">
+        <a href="https://www.linkedin.com/in/jad-saloumi-295065324/" target="_blank">
           <img src="./img/linkedin.png" class="contact-logo" alt="LinkedIn">
           <span>LinkedIn</span>
         </a>  
       </div>
 
+      <!-- Gmail -->
       <div class="contact-card">
         <a href="mailto:saloumijad@gmail.com">
           <img src="./img/gmail.png" class="contact-logo" alt="Gmail">
@@ -254,11 +287,13 @@
   <i class="bi bi-arrow-up fs-2"></i>
 </a>
 
-  <!-- Le footer-->
-  <footer>
-    <p>&copy; 2025 - Jad Saloumi.</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 - Jad Saloumi.</p>
+</footer>
 
+</div>  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
   <script src="src/script.js"></script>
 </body>
 </html>
