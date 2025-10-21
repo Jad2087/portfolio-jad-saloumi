@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Batman";
-    src: url("../fonts/OCR-B.otf") format("opentype");
+    src: url("../fonts/LondrinaSolid-Regular.ttf") format("opentype");
     font-weight: bolder;
     font-style: normal;
 }
@@ -28,11 +28,10 @@ body {
   display: inline-block;
   color: #d400ff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 10000;
   font-size: 1rem;
   background-color: #f0e5ff;
   padding: 10px 18px;
-  border-radius: 30px;
   margin: 0 8px;
   transition: all 0.3s ease;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
