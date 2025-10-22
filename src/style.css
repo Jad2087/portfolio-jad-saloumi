@@ -177,6 +177,30 @@ section h2 {
   margin: 100 0;
 }
 
+.a-propos-content {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+  margin-top: 20px;
+}
+
+.texte {
+  flex: 1; 
+}
+
+.image-container {
+  flex: 1;
+  max-width: 400px; 
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover; 
+  display: block;
+}
+
 /* Skills */
 .skills h2 {
   font-family: "Anton";
@@ -527,6 +551,15 @@ section h2 {
 /* Footer en blanc */
 .dark-mode footer {
   color: #f0e5ff; 
+}
+/* Dark mode footer nav */
+.dark-mode .footer-nav a {
+  background-color: #d8b4f8;
+  color: #4a007d; 
+}
+
+.dark-mode .footer-nav a:hover {
+  background-color: #c084fc;
 }
 
 /* Footer */
