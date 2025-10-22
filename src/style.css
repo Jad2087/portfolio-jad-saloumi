@@ -95,7 +95,7 @@ body {
 }
 
 .portfolio{
-  font-weight: lighter;
+  font-weight: bold;
   font-size: 50px;
 }
 
@@ -143,10 +143,11 @@ section h2 {
 }
 
 .a-propos h2 {
+  font-family: "Anton";
   display: grid;
   font-size: 2.2rem;
   font-weight: bold;
-  color: #d400ff;    
+  color: #000000;    
 }
 
 /* Paragraphes A propos */
@@ -156,6 +157,14 @@ section h2 {
   line-height: 1.8;
   text-align: left;
   font-weight: bolder;
+}
+
+.highlight {
+  color: #67009e;
+  background-color: #f0e5ff;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 /* Contact */
@@ -168,8 +177,48 @@ section h2 {
   margin: 100 0;
 }
 
+/* Skills */
+.skills h2 {
+  font-family: "Anton";
+  display: grid;
+  max-width: 1000px;
+  margin: 100px auto; 
+  padding: 40px 20px;
+  font-size: 2.2rem;
+  margin-bottom: 10px; 
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Skills tags */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto 80px; 
+  padding: 0 20px;
+}
+
+.skill-tag {
+  background-color: #d8b4f8; 
+  color: #4a007d; 
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bolder;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background-color: #c084fc; 
+  transform: scale(1.05);
+}
+
 /*Mes projets */
 .projets h2 {
+  font-family: "Anton";
   font-weight: bolder;
   display: grid;
   max-width: 1000px;
@@ -177,7 +226,7 @@ section h2 {
   padding: 40px 20px;
   font-size: 2.2rem;
   margin-bottom: 10px; 
-  color: #d400ff;
+  color: #000000;
 }
 
 /* Grille projets */
@@ -210,55 +259,116 @@ section h2 {
   color: #000000;      
 }
 
-/* Effet hover */
 .carte-projet:hover {
   transform: translateY(-6px);
-  box-shadow: 6px 6px 12px rgba(0,0,0,0.2); 
-  border-color: #d400ff;
+  box-shadow: 6px 6px 12px rgba(103, 0, 158, 0.2);
+  border-color: #67009e; 
 }
 
-.skills h2 {
-  display: grid;
-  max-width: 1000px;
-  margin: 100px auto; 
-  padding: 40px 20px;
-  font-size: 2.2rem;
-  margin-bottom: 10px; 
-  font-weight: bold;
-  color: #d400ff;
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); 
 }
 
-/* Skills tags */
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto 80px; 
-  padding: 0 20px;
+.modal-content {
+  background-color: #f6efff; 
+  margin: auto;
+  padding: 30px;
+  border: 3px solid #67009e; 
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 #c9a3f7; 
+  color: #3b0069; 
+  text-align: left;
 }
 
-.skill-tag {
-  background-color: #f0e5ff;
+.modal-content h3 {
   color: #67009e;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-size: 0.95rem;
-  font-weight: bolder;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  cursor: default;
+  margin-top: 0;
 }
 
-.skill-tag:hover {
-  background-color: #d400ff;
-  color: #fff;
-  transform: scale(1.05);
+.modal-content p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+/* video animation 3d */
+.video-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 15px 0;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 4px 4px 12px rgba(103, 0, 158, 0.2);
+}
+
+.video-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #67009e;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Pixel Art link avec image */
+.pixelart-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pixelart-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 3px solid #67009e;
+  box-shadow: 4px 4px 0 #e0c3ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pixelart-image:hover {
+  transform: scale(1.03);
+  box-shadow: 6px 6px 12px rgba(103, 0, 158, 0.3);
+}
+
+.pixelart-texte {
+  color: #3b0069;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #67009e;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #3b0069;
 }
 
 /* Titre */
 .texte-contact {
-  color: #d400ff;
+  font-family: "Anton";
+  color: #000000;
   margin-top: 60px;
   font-size: 2rem;
 }
@@ -268,16 +378,15 @@ section h2 {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto 80px;
   padding: 0 20px;
 }
 
 .contact-tag {
-  background-color: #f0e5ff;
-  color: #67009e;
+  background-color: #d8b4f8; 
+  color: #4a007d; 
   padding: 0.6rem 1.2rem;
-  border-radius: 30px;
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -286,8 +395,7 @@ section h2 {
 }
 
 .contact-tag:hover {
-  background-color: #d400ff;
-  color: #fff;
+  background-color: #c084fc; 
   transform: scale(1.05);
 }
 
@@ -309,107 +417,6 @@ section h2 {
   .contact-card p {
     font-size: 0.9rem;
   }
-}
-
-/* MODAL */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 10;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7); /* mettre le fond flou */
-}
-
-.modal-content {
-  background-color: white;
-  margin: auto;
-  padding: 30px;
-  border: 3px solid black;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  box-shadow: 6px 6px 0 black;
-  color: black;
-  text-align: left;
-}
-
-.modal-content h3 {
-  color: #d400ff;
-  margin-top: 0;
-}
-
-.modal-content p {
-  margin: 8px 0;
-  font-size: 1rem;
-}
-
-/* video animation 3d */
-.video-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 15px 0;
-}
-
-.video-container video {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.video-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #d400ff;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Pixal Art link avec image */
-.pixelart-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.pixelart-image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  border: 3px solid #000;
-  box-shadow: 4px 4px 0 #d400ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.pixelart-image:hover {
-  transform: scale(1.03);
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.pixelart-texte {
-  color: #000;
-  margin-top: 10px;
-  font-size: 1rem;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #d400ff;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: black;
 }
 
 /* Bouton retour en haut */
@@ -446,72 +453,96 @@ section h2 {
   color: #000000;
 }
 
+.dark-mode .a-propos h2,
+.dark-mode .skills h2,
+.dark-mode .projets h2,
+.dark-mode .texte-contact {
+  color: #ffffff;
+}
+
 /* Prénom et Nom */
 .dark-mode .nom {
   color: #ffffff; 
-
 }
 
 /* À propos en blanc */
 .dark-mode .a-propos p {
-    color: #f0e5ff; 
+    color: #ffffff; 
 }
 
 /* Compétences Dark Mode */
 .dark-mode .skill-card {                    
-    border: 2px solid #f0e5ff;          
-}
-
-/* Cartes projets */
-.dark-mode .carte-projet {
-    background-color: #1e1e1e;
-    color: #f0e5ff; 
-    border: 2px solid #f0e5ff; 
-    box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-}
-
-.dark-mode .carte-projet:hover {
-    transform: translateY(-6px);
-    box-shadow: 6px 6px 16px rgba(0,0,0,0.7);
-    border-color: #d400ff;
-}
-
-.dark-mode .carte-projet h3 {
-    color: #f0e5ff; 
+  border: 2px solid #f0e5ff;          
 }
 
 /* Compétences et contact */
 .dark-mode .skill-card,
 .dark-mode .contact-card {
-    background-color: #1e1e1e;
-    color: #f0e5ff; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  background-color: #ffffff;
+  color: #ffffff; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Cartes projets */
+.dark-mode .carte-projet {
+  background-color: #2a2233; 
+  color: #f0e5ff; 
+  border: 2px solid #a278d3; 
+  box-shadow: 4px 4px 0 rgba(163, 120, 211, 0.5); 
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.dark-mode .carte-projet:hover {
+  transform: translateY(-6px);
+  box-shadow: 6px 6px 16px rgba(103, 0, 158, 0.3);
+  border-color: #67009e; 
+}
+
+.dark-mode .carte-projet h3 {
+  color: #ffffff;
 }
 
 /* Modale */
 .dark-mode .modal-content {
-    background-color: #1e1e1e;
-    color: #f0e5ff; 
-    border: 2px solid #d400ff;
-    box-shadow: 6px 6px 20px rgba(0,0,0,0.7);
+  background-color: #1e1a26; 
+  color: #f0e5ff; 
+  border: 2px solid #a278d3; 
+  box-shadow: 6px 6px 20px rgba(163, 120, 211, 0.2); 
+}
+
+.dark-mode .modal-content h3 {
+  color: #e3c9ff; 
+}
+
+.dark-mode .close {
+  color: #a278d3;
+}
+
+.dark-mode .close:hover {
+  color: #f0e5ff;
+}
+
+.dark-mode .video-container video,
+.dark-mode .pixelart-image {
+  box-shadow: 4px 4px 12px rgba(163, 120, 211, 0.15); 
+  border: 2px solid #a278d3;
 }
 
 /* Contact cards - Dark Mode */
 .dark-mode .contact-card {
-    background-color: #1e1e1e;
-    color: #f0e5ff; 
-    border: 2px solid #f0e5ff; 
+  background-color: #1e1e1e;
+  color: #f0e5ff; 
+  border: 2px solid #f0e5ff; 
 }
 
 .dark-mode .contact-card:hover {
-    transform: translateY(-4px);
-    border-color: #d400ff;
+  transform: translateY(-4px);
+  border-color: #d400ff;
 }
 
 /* Footer en blanc */
 .dark-mode footer {
-    color: #f0e5ff; 
+  color: #f0e5ff; 
 }
 
 /* Footer */
