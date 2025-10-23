@@ -264,12 +264,11 @@ section h2 {
 
 /* Les 4 cartes */
 .carte-projet {
-  border: 2px solid black;
   box-shadow: 3px 3px 0 black;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 213px;        
+  width: 215px;        
   height: 445px;       
   padding: 1.5rem;
   text-align: center;
@@ -286,7 +285,7 @@ section h2 {
 
 .carte-projet:hover {
   transform: translateY(-6px);
-  box-shadow: 6px 6px 12px rgba(103, 0, 158, 0.2); 
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .carte-projet img {
@@ -500,17 +499,14 @@ section h2 {
 
 /* Cartes projets */
 .dark-mode .carte-projet {
-  background-color: #2a2233; 
   color: #f0e5ff; 
-  border: 2px solid #a278d3; 
   box-shadow: 4px 4px 0 rgba(163, 120, 211, 0.5); 
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .dark-mode .carte-projet:hover {
   transform: translateY(-6px);
-  box-shadow: 6px 6px 16px rgba(103, 0, 158, 0.3);
-  border-color: #67009e; 
+  box-shadow: 6px 6px 16px rgba(255, 255, 255, 0.3);
 }
 
 .dark-mode .carte-projet h3 {
