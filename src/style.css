@@ -265,7 +265,7 @@ section h2 {
 /* Les 4 cartes */
 .carte-projet {
   border: 2px solid black;
-  box-shadow: 4px 4px 0 black;
+  box-shadow: 3px 3px 0 black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,15 +278,22 @@ section h2 {
 }
 
 .carte-projet h3 {
+  position: absolute;
   font-weight: bolder;
   font-size: 1.2rem;
-  color: #000000;      
+  color: #ffffff;      
 }
 
 .carte-projet:hover {
   transform: translateY(-6px);
-  box-shadow: 6px 6px 12px rgba(103, 0, 158, 0.2);
-  border-color: #67009e; 
+  box-shadow: 6px 6px 12px rgba(103, 0, 158, 0.2); 
+}
+
+.carte-projet img {
+  border: 2px solid black;
+  width: 213px;        
+  height: 445px;
+  object-fit: cover;
 }
 
 .modal {
@@ -412,7 +419,7 @@ section h2 {
   color: #4a007d; 
   padding: 0.6rem 1.2rem;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
