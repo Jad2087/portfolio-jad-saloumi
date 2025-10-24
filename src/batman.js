@@ -22,3 +22,10 @@ images.forEach(image => {
     });
   });
 });
+
+// Vérifie si le dark mode activé sur index.html
+// Si oui ca applique automatique sur batman.html
+if (sessionStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark-mode');
+}
+

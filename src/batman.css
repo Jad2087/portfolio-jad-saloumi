@@ -92,3 +92,32 @@ p {
   border: 4px solid #fff; 
   border-radius: 8px;
 }
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #2a2233;
+  color: #ffffff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li {
+  color: #ffffff;
+}
+
+.dark-mode a {
+  color: #d8b4f8;
+}
+
+.dark-mode a:hover {
+  color: #c084fc;
+}
+
+/* Vidéos et images */
+.dark-mode .video-container iframe,
+.dark-mode .processus-images img {
+  filter: brightness(0.85);
+}
+

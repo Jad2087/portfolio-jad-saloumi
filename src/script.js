@@ -6,12 +6,22 @@ createApp({
       isDarkMode: false
     };
   },
+  mounted() {
+    // Vérifie si dark mode est actif dans la session
+    if (sessionStorage.getItem('darkMode') === 'true') {
+      this.isDarkMode = true;
+      document.body.classList.add('dark-mode');
+    }
+  },
   methods: {
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
 
       // Ajoute ou retire la classe sur le body
       document.body.classList.toggle('dark-mode', this.isDarkMode);
+
+      // Sauvegarde l'état dans sessionStorage
+      sessionStorage.setItem('darkMode', this.isDarkMode);
     }
   }
 }).mount('#app');
