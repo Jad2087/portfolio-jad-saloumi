@@ -1,0 +1,94 @@
+/* Fonts */
+@font-face {
+  font-family: "Tech";
+  src: url("../fonts/ShareTechMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/Anton-Regular.ttf") format("truetype");
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Tech";
+  font-weight: bold;
+  background-color: #f6efff; 
+  color: #3b0069; 
+}
+
+/* Container général */
+.container { 
+  max-width: 1000px; 
+  margin: auto; 
+  padding: 40px 20px; 
+}
+
+h1, h2, h3 { 
+  font-family: "Anton"; 
+  color: #67009e; 
+  margin-bottom: 20px; 
+}
+
+p { 
+  font-family: "Tech"; 
+  font-weight: bold; 
+  line-height: 1.8; 
+  color: #3b0069; 
+  margin: 10px 0; 
+}
+
+/* Vidéo container */
+.video-container { 
+  margin: 20px 0; 
+}
+
+.video-container video, iframe { 
+  width: 100%; 
+  border-radius: 8px; 
+}
+
+/* Images processus */
+.processus-images { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.processus-images img {
+  width: 150px;
+  cursor: pointer;
+  border: 3px solid #67009e;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.processus-images img:hover { 
+  transform: scale(1.05); 
+}
+
+.overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.8); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1000;
+}
+
+.overlay img { 
+  max-width: 90%; 
+  max-height: 90%; 
+  border: 4px solid #fff; 
+  border-radius: 8px;
+}

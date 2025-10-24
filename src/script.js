@@ -24,6 +24,7 @@ cartesprojet.forEach(carte => {
     const idmodal = carte.getAttribute('data-modal'); // récupère id du modal 
     const modal = document.getElementById(idmodal); // trouve le modal
     modal.style.display = 'block'; // affiche le modal
+    document.body.style.overflow = 'hidden';
   });
 });
 
@@ -34,6 +35,7 @@ btnFermer.forEach(bouton => {
   bouton.addEventListener('click', () => {
     const modal = bouton.closest('.modal'); // trouve le modal parent
     modal.style.display = 'none'; // le cache
+    document.body.style.overflow = '';
   });
 });
 
@@ -58,6 +60,8 @@ const closeBtn = modal.querySelector('.close');
     }
   });
 });
+
+
 
 
 
