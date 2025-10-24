@@ -127,7 +127,8 @@ section h2 {
   display: grid;
   font-size: 2.2rem;
   font-weight: bold;
-  color: #000000;    
+  color: #000000;   
+  margin-bottom: 40px; 
 }
 
 /* Paragraphes A propos */
@@ -169,16 +170,17 @@ section h2 {
 }
 
 .image-container {
-  flex: 1;
-  max-width: 400px; 
+  flex: 0 0 auto; 
+  max-width: none; 
 }
 
 .image-container img {
-  width: 100%;
-  height: auto;
+  max-height: 550px; 
+  width: auto;       
   border-radius: 16px;
   object-fit: cover; 
   display: block;
+  margin-left: 20px; 
 }
 
 /* A propos Content petit écran*/
