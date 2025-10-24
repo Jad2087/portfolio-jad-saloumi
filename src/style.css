@@ -50,9 +50,8 @@ body {
 @media (max-width: 768px) {
 
    .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 10px 0;
   }
 
   .nav a {
@@ -60,8 +59,7 @@ body {
   }
 
   /* À PROPOS */
-  .a-propos {
-    padding: 20px;
+  .a-propos h2 {
     text-align: center;
   }
 
@@ -74,19 +72,6 @@ body {
   .projets h2 {
     text-align: center;
   }
-
-  .grille-projets {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    gap: 1.5rem;
-  }
-
-  .carte-projet {
-    width: 90%;     
-    height: 120px;  
-  }
-
 }
 
 .nom{
@@ -94,26 +79,21 @@ body {
   font-size: 200px;
 }
 
+/* Nom Ecran */
+@media (max-width: 900px) {
+  .nom {
+    font-size: clamp(4rem, 15vw, 10rem);
+  }
+}
+
 .portfolio{
-  font-weight: bold;
   font-size: 50px;
 }
 
-/* Responsive pour petits écrans */
-@media (max-width: 768px) {
-  .prenom {
-    top: -20px;
-    left: 10%;
-    font-size: clamp(1rem, 6vw, 2rem);
-  }
-  .nom {
-    top: 55px;
-    left: 50%;
-    font-size: clamp(1rem, 6vw, 2rem);
-  }
-  .portfolio-title {
-    font-size: clamp(3rem, 10vw, 5rem);
-    padding: 15px 25px;
+/*Portfolio petit écrans */
+@media (max-width: 900px) {
+  .portfolio {
+    font-size: clamp(2rem, 8vw, 4rem);
   }
 }
 
@@ -201,6 +181,34 @@ section h2 {
   display: block;
 }
 
+/* A propos Content petit écran*/
+@media (max-width: 900px) {
+  .a-propos-content {
+    flex-direction: column; 
+    text-align: center;     
+  }
+
+  .a-propos .texte {
+    order: 1; 
+  }
+
+  .a-propos .image-container {
+    order: 2; 
+    max-width: 300px; 
+    width: 100%;
+  }
+
+  .a-propos .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .a-propos p {
+    text-align: center;
+  }
+}
+
 /* Skills */
 .skills h2 {
   font-family: "Anton";
@@ -262,6 +270,30 @@ section h2 {
   margin-top: 20px; /* espace sous le titre */
 }
 
+/* Tablette : 2 colonnes */
+@media (max-width: 1024px) {
+  .grille-projets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carte-projet {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Mobile : 1 colonne */
+@media (max-width: 600px) {
+  .grille-projets {
+    grid-template-columns: 1fr;
+  }
+
+  .carte-projet {
+    width: 90%;
+    height: auto;
+  }
+}
+
 /* Les 4 cartes */
 .carte-projet {
   box-shadow: 3px 3px 0 black;
@@ -314,14 +346,15 @@ section h2 {
   padding: 30px;
   border: 3px solid #67009e; 
   width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
+  max-width: 800px;
+  border-radius: 0;
   box-shadow: 6px 6px 0 #c9a3f7; 
   color: #3b0069; 
   text-align: left;
 }
 
 .modal-content h3 {
+  font-family: "Anton";
   color: #67009e;
   margin-top: 0;
 }
