@@ -132,7 +132,6 @@ createApp({
   }
 }).mount('#app');
 
-
 // Ouvrir le modal quand on clique sur une carte de projet
 const cartesprojet = document.querySelectorAll('.carte-projet');
 
