@@ -325,7 +325,7 @@ section h2 {
 
 .carte-projet img {
   border: 2px solid black;
-  width: 213px;        
+  width: 217px;        
   height: 445px;
   object-fit: cover;
 }
@@ -471,6 +471,25 @@ section h2 {
   transform: scale(1.05);
 }
 
+/* Bouton Home */
+.btn-accueil {
+  position: fixed; 
+  bottom: 20px; 
+  right: 20%; 
+  background-color: #d8b4f8; 
+  color: #4a007d;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Hover Home */
+.btn-accueil:hover {
+  background-color: #c084fc;
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .contact-grid {
     gap: 1.2rem;
@@ -596,15 +615,6 @@ section h2 {
 /* Footer en blanc */
 .dark-mode footer {
   color: #f0e5ff; 
-}
-/* Dark mode footer nav */
-.dark-mode .footer-nav a {
-  background-color: #d8b4f8;
-  color: #4a007d; 
-}
-
-.dark-mode .footer-nav a:hover {
-  background-color: #c084fc;
 }
 
 /* Footer */
