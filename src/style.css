@@ -383,6 +383,14 @@ section h2 {
   box-shadow: 4px 4px 12px rgba(103, 0, 158, 0.2);
 }
 
+.video-container iframe {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16/9;       
+  border-radius: 8px;
+  box-shadow: 4px 4px 12px rgba(103, 0, 158, 0.2);
+}
+
 .video-title {
   font-size: 1.2rem;
   font-weight: bold;

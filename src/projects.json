@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Quiz Batman",
+    "image": "./img/batman.jpg",
+    "link": "./batmanquiz.html"
+  },
+  {
+    "id": 2,
+    "title": "Entre les murs",
+    "image": "./img/animation3d.png",
+    "modal": {
+    "cours": "Animation 3D",
+    "descriptionCourte": "Création d’une animation 3D dans un environnement fictif.",
+    "descriptionLongue": "La professeure nous a demandé de créer une animation libre, à réaliser quand nous le souhaitions, tout en respectant les critères fournis. J’ai réalisé une animation mettant en scène une silhouette dans un espace vide, en utilisant Maya 3D pour la modélisation et l’animation. J’ai ensuite arrangé les lumières, ajouté des effets et intégré des sons dans DaVinci Resolve pour améliorer l’ambiance de la vidéo.",
+    "role": "Modeleur et animateur 3D",
+    "technologies": "Maya 3D et DaVinci Resolve",
+    "type": "Individuel",
+    "video": "./img/entre_les_murs.mp4"
+    }
+  },
+  {
+    "id": 3,
+    "title": "GameCraft",
+    "image": "./img/magazine.jpg",
+    "modal": {
+    "cours": "Web 4",
+    "descriptionCourte": "Création d’un magazine numérique interactif.",
+    "descriptionLongue": "Le professeur nous a demandé de créer un site de magazine avec WordPress et d’utiliser le SEO pour assurer une qualité optimale du contenu. J’ai réalisé la structure du site, intégré les contenus interactifs et travaillé sur le design et la mise en page, tandis que mon partenaire Benjamin Ferland s’est occupé des éléments graphiques et du design visuel.",
+    "role": "Développement et design web",
+    "technologies": "WordPress et SEO",
+    "type": "Équipe de 2",
+    "partenaire": "Benjamin Ferland (Web Design)",
+    "iframe": "https://www.youtube.com/embed/CcfkoHW8AtQ"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Nico",
+    "image": "./img/pixal.png",
+    "modal": {
+    "cours": "Interactivité ludique",
+    "descriptionCourte": "Création d’un jeu 2D en style pixel art inspiré des classiques rétro.",
+    "descriptionLongue": "Le professeur nous a demandé de programmer un jeu vidéo en JavaScript intégrant une animation 2D en pixel art. En plus de soigner l’esthétique et le design, nous devions veiller à ce que le gameplay reste clair et compréhensible pour le joueur. J’ai programmé un jeu vidéo en animation 2D en utilisant JavaScript et j’ai conçu les animations, le gameplay et le design visuel du jeu.",
+    "role": "Développement d’un jeu vidéo 2D",
+    "technologies": "HTML, CSS, JavaScript, Phaser",
+    "type": "Individuel",
+    "lienJeu": "https://ramb1o.itch.io/nico",
+    "imageJeu": "./img/pixal-art.png"
+    }
+  }
+]

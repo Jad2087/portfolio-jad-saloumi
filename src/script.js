@@ -1,184 +1,151 @@
+// Import de la fonction createApp depuis Vue
 const { createApp } = Vue;
 
+// Création de l'application Vue
 createApp({
+  // Déclaration des données réactives de l'application
   data() {
     return {
-      isDarkMode: false
+      isDarkMode: false, // pour activer et désactiver le mode sombre
+      projects: [],   // Tableau pour stocker les projets récupérés depuis le JSON
+      modalActif: null,  // iD du modal actuellement ouvert
+      projetActif: null  // projet actuellement ouvert dans le modal
     };
   },
 
   mounted() {
-    // Vérifie si dark mode est actif dans la session
-    if (sessionStorage.getItem('darkMode') === 'true') {
+    // Vérifie si le mode sombre est activer
+    if (sessionStorage.getItem("darkMode") === "true") {
       this.isDarkMode = true;
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     }
+    // Fetch des projets
+    fetch("src/projects.json") // Récupère le fichier JSON qui contient les projets
+      .then(response => {
+        if (!response.ok) throw new Error("Erreur de chargement du JSON");
+        return response.json();
+      })
+      .then(data => {
+        this.projects = data; // stock les projets dans la variable
+        this.message = "";
+        console.log("Projets chargés :", this.projects);
+      })
+      .catch(erreur => {
+        console.error("Erreur :", erreur);
+        this.message = "Erreur de chargement des projets";
+      });
 
-    // Animation nav au chargement 
-    const navliens = document.querySelectorAll('.nav');
+    // Les animations GSAP
+    // Animation des liens de nav
+    const navliens = document.querySelectorAll(".nav");
     gsap.from(navliens, {
-      x: -20,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power3.out', // animation doux
-      stagger: 0.15
+      x: -20, // Animation qui vient de la gauche
+      opacity: 0, // transparent
+      duration: 0.6, // Durée de l'animation
+      ease: "power3.out", // animation doux
+      stagger: 0.15 // secondes entre chaque nav
     });
 
-    // Animation header principal
-    const nom = document.querySelector('.nom');
-    const portfolio = document.querySelector('.portfolio');
-    gsap.timeline({ 
-      defaults: { 
-        duration: 1, // Durée des animations 
-        ease: 'power3.out' 
-      } 
-    })
-      .from(nom, { 
-        opacity: 0,  // apparait invisible
-        scale: 0.8   // apparait cm un saut
-      })
-      .from(portfolio, { 
-        opacity: 0, 
-        scale: 0.8 
-      }, '-=0.5'); // cmc 0,5 seconde avant fin d'animation 
+    // Animation du header principal nom et portfolio
+    const nom = document.querySelector(".nom");
+    const portfolio = document.querySelector(".portfolio");
+    gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } })
+      .from(nom, 
+        { opacity: 0,
+           scale: 0.8 // nom apparaît avec un effet scale
+        })  
+      .from(portfolio, 
+        { opacity: 0, 
+          scale: 0.8 
+        }, "-=0.5"); // le mot Portfolio apparaît apres le nom 0.5s
 
-    // ScrollTrigger pour À propos
+    // Plugin ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
-    const aPropos = document.querySelector('.a-propos-content');
-      gsap.from(aPropos.querySelector('.texte'), {
-        scrollTrigger: {
-          trigger: aPropos,
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        },
+
+    // Animation de la section À propos
+    const aPropos = document.querySelector(".a-propos-content");
+      // Texte
+      gsap.from(aPropos.querySelector(".texte"), {
+        scrollTrigger: { trigger: aPropos, start: "top 80%", toggleActions: "play none none none" },
         x: -50,
         opacity: 0,
         duration: 1,
-        ease: 'power3.out'
+        ease: "power3.out"
       });
-      gsap.from(aPropos.querySelector('.image-container'), {
-        scrollTrigger: {
-          trigger: aPropos,
-          start: 'top 80%',
-          toggleActions: 'play none none none'
+      // Image de moi
+      gsap.from(aPropos.querySelector(".image-container"), {
+         scrollTrigger: { 
+          trigger: aPropos, 
+          start: "top 80%", 
+          toggleActions: "play none none none" 
         },
-        x: 50,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.2
+          x: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.2
       });
 
-    // ScrollTrigger Compétences un tag après un
-    const skills = document.querySelectorAll('.skill-tag');
+      // Animation des compétences
+    const skills = document.querySelectorAll(".skill-tag");
       gsap.from(skills, {
-        scrollTrigger: {
-          trigger: '.skills-tags',
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        },
+       scrollTrigger: { 
+        trigger: ".skills-tags", 
+        start: "top 80%", 
+        toggleActions: "play none none none" 
+      },
         y: 30,
         opacity: 0,
         duration: 0.8,
-        ease: 'power3.out',
+        ease: "power3.out",
         stagger: 0.1
       });
-    
-    // Animation Projets au scroll une carte après une
-    const projetsSection = document.querySelector(".grille-projets");
-      gsap.from(".carte-container", {
-        scrollTrigger: {
-          trigger: projetsSection,
-          start: "top 80%",
-          toggleActions: "play none none none"
-        },
+
+    // Animation des projets à l'apparition dans la grille
+    const cartecontainer = document.querySelector(".carte-container");
+      gsap.from(cartecontainer, {
+       scrollTrigger: { 
+        trigger: ".grille-projets", 
+        start: "top 80%", 
+        toggleActions: "play none none none" 
+      },
         y: 50,
         opacity: 0,
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.2
-      });
-
-    // Animation modals 
-    const cartes = document.querySelectorAll('.carte-projet[data-modal]');
-    cartes.forEach(carte => {
-      const modalId = carte.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
-      const modalContent = modal.querySelector('.modal-content');
-
-      carte.addEventListener('click', () => {
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-
-        gsap.fromTo(modalContent,
-          { opacity: 0, 
-            scale: 0.8 
-          },
-          { opacity: 1, 
-            scale: 1, 
-            duration: 0.5, 
-            ease: 'power3.out' }
-        );
-      });
     });
   },
 
+  // Méthodes
   methods: {
+    // Active ou désactive le mode sombre
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
-      document.body.classList.toggle('dark-mode', this.isDarkMode);
-      sessionStorage.setItem('darkMode', this.isDarkMode);
+      document.body.classList.toggle("dark-mode", this.isDarkMode);
+      sessionStorage.setItem("darkMode", this.isDarkMode);
+    },
+
+    // Redirection vers un lien
+    goTo(link) {
+      window.location.href = link;
+    },
+
+    // Ouvre un modal pour un projet donné
+    openModal(modalId) {
+      const projet = this.projects.find(p => p.modal === modalId); // Recherche le projet correspondant
+      if (projet) {
+        this.projetActif = projet;  // Stocke le projet actif
+        this.modalActif = projet.modal; // Active le modal
+        document.body.style.overflow = ""; // Permet le scroll ou désactive
+      }
+    },
+
+    // Ferme le modal actif
+    closeModal() {
+      this.modalActif = null;
+      this.currentProjet = null;
+      document.body.style.overflow = ""; // Restaure le scroll
     }
   }
-}).mount('#app');
-
-// Ouvrir le modal quand on clique sur une carte de projet
-const cartesprojet = document.querySelectorAll('.carte-projet');
-
-cartesprojet.forEach(carte => {
-  carte.addEventListener('click', () => {
-    const idmodal = carte.getAttribute('data-modal'); // récupère id du modal 
-    const modal = document.getElementById(idmodal); // trouve le modal
-    modal.style.display = 'block'; // affiche le modal
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-// Fermer le modal quand on clique sur le bouton (×)
-const btnFermer = document.querySelectorAll('.close');
-
-btnFermer.forEach(bouton => {
-  bouton.addEventListener('click', () => {
-    const modal = bouton.closest('.modal'); // trouve le modal parent
-    modal.style.display = 'none'; // le cache
-    document.body.style.overflow = '';
-  });
-});
-
-// Fermeture et pause automatique vidéo
-document.querySelectorAll('.modal').forEach(modal => {
-
-const video = modal.querySelector('video');
-const closeBtn = modal.querySelector('.close');
-
-  closeBtn.addEventListener('click', () => {
-    // on ferme le modal
-    modal.style.display = 'none';
-    // si une vidéo est présent il faut la mettre pause
-    if (video) {
-      video.pause();
-      video.currentTime = 0; // il remet la vidéo du début
-    }
-     // Stop vidéo YouTube iframe présente
-    const iframe = modal.querySelector('iframe');
-    if (iframe) {
-      iframe.src = iframe.src; // réinitialise le src pour arreter la vidéo
-    }
-  });
-});
-
-
-
-
-
-
+}).mount("#app"); 

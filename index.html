@@ -47,10 +47,18 @@
   </div>
 </main>
 
+<!-- Section a propos -->
 <section class="a-propos" id="a-propos">
+  <!-- Conteneur principal de la section -->
   <div class="a-propos-content">
+    
+    <!-- Texte -->
     <div class="texte">
+
+      <!-- Titre de la section -->
       <h2>/À PROPOS</h2>
+
+      <!-- Paragraphe de objectif carriere -->
       <p>
         Je m'appelle <span class="highlight">Jad Saloumi</span>, diplômé en 
         <span class="highlight">Techniques d’intégration multimédia</span>. 
@@ -59,17 +67,19 @@
         où je pourrai participer à des projets stimulants et mettre à profit ma créativité et mes compétences techniques.
       </p>
 
-
+      <!-- Informations de contact -->
       <div class="contact">
-        <p>Laval, Québec</p>
-        <p>saloumijad@gmail.com</p>
+        <p>Laval, Québec</p> 
+        <p>saloumijad@gmail.com</p> 
         <p>514-568-8183</p>
       </div>
     </div>
 
+    <!-- Image de moi -->
     <div class="image-container">
-      <img src="./img/moi-vertical.png">
+      <img src="./img/moi-vertical.png" alt="Portrait de Jad Saloumi">
     </div>
+
   </div>
 </section>
 
@@ -82,7 +92,7 @@
   <!-- Conteneur des compétences -->
   <div class="skills-tags">
 
-    <!-- Badge pour HTML -->
+    <!-- Badge pour Visual StudioL -->
     <span class="skill-tag">Visual Studio</span>
 
     <!-- Badge pour HTML -->
@@ -106,7 +116,7 @@
     <!-- Badge pour Figma -->
     <span class="skill-tag">Figma</span>
 
-    <!-- Badge pour DaVinci Reaper -->
+    <!-- Badge pour Reaper -->
     <span class="skill-tag">Reaper</span>
 
     <!-- Badge pour DaVinci Resolve -->
@@ -115,133 +125,82 @@
   </div>
 </section>
 
- <!-- Section Projets -->
+<!-- Section des projets-->
 <section class="projets" id="projets">
   
-  <!-- Titre de la section -->
-  <h2>/Projets</h2>
+  <!-- Titre Projet -->
+  <h2>/PROJETS</h2>
 
-  <!-- Grille des projets -->
+  <!-- Grille Dynamique des projets activer par Vue grace a v-for -->
   <div class="grille-projets">
+    
+    <!-- Boucle sur chaque projet du fichier JSON -->
+    <div class="carte-container" v-for="projet in projects" :key="projet.id">
+      
+      <!-- Carte de projet cliquable -->
+      <div class="carte-projet"
+           @click="projet.link ? goTo(projet.link) : openModal(projet.modal)">
+        <!-- Si le projet a un lien qui est "projet.link" ca va goTo() -->
 
-    <!-- Projet 1 -->
-    <div class="carte-container">
-      <div class="carte-projet">
-          <a href="./batmanquiz.html">
-            <img src="./img/batman.jpg" alt="Quiz Batman">
-          </a>
-        <h3>Quiz Batman</h3>
+        <!-- Image du projet -->
+        <img :src="projet.image"/>
+
+        <!-- Titre du projet -->
+        <h3 class="carte-title">{{ projet.title }}</h3>
       </div>
+
     </div>
 
-    <!-- Projet 2 -->
-    <div class="carte-container">
-      <div class="carte-projet" data-modal="modal-3d">
-        <img src="./img/animation3d.png">
-        <h3>Entre les murs</h3>
-      </div>
-    </div>
-
-    <!-- Projet 3 -->
-    <div class="carte-container">
-      <div class="carte-projet" data-modal="modal-magazine">
-        <img src="./img/magazine.jpg">
-        <h3>GameCraft</h3>
-      </div>
-    </div>
-
-    <!-- Projet 4 -->
-    <div class="carte-container">
-      <div class="carte-projet" data-modal="modal-pixel">
-        <img src="./img/pixal.png">
-        <h3>Nico</h3>
-      </div>
-    </div>
+    <!-- Message affiché si aucun projet est encore chargé -->
+    <p v-if="message">{{ message }}</p>
 
   </div>
 </section>
 
-<!-- Modals -->
- 
-<!-- Modal Animation 3D -->
-<div id="modal-3d" class="modal">
+<!-- Modal des projets afficher une fois cliquer -->
+<div v-if="modalActif" class="modal" style="display:block">
+  <!-- Contenu principal du modal -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Entre Les Murs</h3>
-    <p><strong>Cours :</strong> Animation 3D</p>
-     <p><strong>Description courte :</strong> Création d’une animation 3D dans un environnement fictif.</p>
-      <p><strong>Description longue :</strong>
-      La professeure nous a demandé de créer une animation libre, à réaliser quand nous le souhaitions, 
-      tout en respectant les critères fournis. J’ai réalisé une animation mettant en scène une silhouette dans un espace vide, 
-      en utilisant Maya 3D pour la modélisation et l’animation. J’ai ensuite arrangé les lumières, ajouté des effets et intégré des sons dans DaVinci Resolve pour améliorer l’ambiance de la vidéo.
-     </p>
-    <p><strong>Rôle :</strong> Modeleur et animateur 3D</p>
-    <p><strong>Technologies :</strong> Maya 3D et Davinci Resolve</p>
-    <p><strong>Type :</strong> Individuel</p>
 
-    <!-- Vidéo -->
-    <div class="video-container">
+    <!-- Bouton de fermeture du modal -->
+    <span class="close" @click="modalActif=null">&times;</span>
+
+    <!-- Titre du projet -->
+    <h3>{{ projetActif.title }}</h3>
+
+    <!-- Informations principales du projet -->
+    <p><strong>Cours :</strong> {{ modalActif.cours }}</p>
+    <p><strong>Description courte :</strong> {{ modalActif.descriptionCourte }}</p>
+    <p><strong>Description longue :</strong> {{ modalActif.descriptionLongue }}</p>
+    <p><strong>Rôle :</strong> {{ modalActif.role }}</p>
+    <p><strong>Technologies :</strong> {{ modalActif.technologies }}</p>
+    <p><strong>Type :</strong> {{ modalActif.type }}</p>
+
+    <!-- Video du projet Animation 3D -->
+    <div v-if="modalActif.video" class="video-container">
+      <p class="video-title">Vidéo du projet</p>
       <video controls>
-        <source src="./img/entre_les_murs.mp4" type="video/mp4">
-        Ton navigateur ne supporte pas la lecture vidéo.
+        <source :src="modalActif.video" type="video/mp4">
       </video>
     </div>
-  </div>
-</div>
 
-<!-- Modal Magazine -->
-<div id="modal-magazine" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>GameCraft</h3>
-    <p><strong>Cours :</strong> Web 4</p>
-    <p><strong>Description courte :</strong> Création d’un magazine numérique interactif.</p>
-     <p><strong>Description longue :</strong>
-      Le professeur nous a demandé de créer un site de magazine avec WordPress et d’utiliser le SEO pour assurer une qualité optimale du contenu. 
-      J’ai réalisé la structure du site, intégré les contenus interactifs et travaillé sur le design et la mise en page, tandis que mon partenaire Benjamin Ferland s’est occupé des éléments graphiques et du design visuel.
-     </p>
-    <p><strong>Rôle :</strong> Développement et design web</p>
-    <p><strong>Technologies :</strong> WordPress et SEO</p>
-    <p><strong>Type :</strong> Équipe de 2</p>
-    <p><strong>Partenaire :</strong> Benjamin Ferland (Web Design)</p>
-
-    <!-- Vidéo YouTube -->
-    <div class="video-container">
-      <iframe 
-        width="100%" 
-        height="315" 
-        src="https://www.youtube.com/embed/CcfkoHW8AtQ" 
-        title="Présentation de GameCraft" 
-        frameborder="0" 
-        allow="encrypted-media" 
-        allowfullscreen>
+    <!-- Iframe du vidéo YouTube GameCraft -->
+    <div v-if="modalActif.iframe" class="video-container">
+      <p class="video-title">Vidéo du projet</p>
+      <iframe class="video-container" 
+              :src="modalActif.iframe" 
+              frameborder="0" 
+              allowfullscreen>
       </iframe>
     </div>
-  </div>
-</div>
 
-<!-- Modal Pixel Art -->
-<div id="modal-pixel" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3>Nico</h3>
-    <p><strong>Cours :</strong>Interactivité ludique</p>
-    <p><strong>Description courte :</strong> Création d’un jeu 2D en style pixel art inspiré des classiques rétro.</p>
-     <p><strong>Description longue :</strong>
-       Le professeur nous a demandé de programmer un jeu vidéo en JavaScript intégrant une animation 2D en pixel art. 
-       En plus de soigner l’esthétique et le design, nous devions veiller à ce que le gameplay reste clair et compréhensible pour le joueur. 
-       J’ai programmé un jeu vidéo en animation 2D en utilisant JavaScript et j’ai conçu les animations, le gameplay et le design visuel du jeu.
-     </p>
-    <p><strong>Rôle :</strong> Développement d’un jeu vidéo 2D</p>
-    <p><strong>Technologies :</strong> HTML, CSS, JavaScript, Phaser</p>
-    <p><strong>Type :</strong> Individuel</p>
-
-    <!-- Lien vers le jeu -->
-    <div class="pixelart-container">
-      <a href="https://ramb1o.itch.io/nico" target="_blank">
-        <img src="./img/pixal-art.png" class="pixelart-image" alt="Pixel Art Nico">
+    <!-- Lien vers le jeu Pixel Art -->
+    <div v-if="modalActif.lienJeu" class="pixelart-container">
+      <a :href="modalActif.lienJeu">
+        <img :src="modalActif.imageJeu" class="pixelart-image"/>
       </a>
     </div>
+
   </div>
 </div>
 
@@ -277,6 +236,7 @@
 
 </div>  
   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <!-- ScrollTrigger Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
