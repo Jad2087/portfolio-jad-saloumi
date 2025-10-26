@@ -25,9 +25,9 @@
     "image": "./img/magazine.jpg",
     "modal": {
     "cours": "Web 4",
-    "descriptionCourte": "Création d’un magazine numérique interactif.",
-    "descriptionLongue": "Le professeur nous a demandé de créer un site de magazine avec WordPress et d’utiliser le SEO pour assurer une qualité optimale du contenu. J’ai réalisé la structure du site, intégré les contenus interactifs et travaillé sur le design et la mise en page, tandis que mon partenaire Benjamin Ferland s’est occupé des éléments graphiques et du design visuel.",
-    "role": "Développement et design web",
+    "descriptionCourte": "Création d’un magazine numérique.",
+    "descriptionLongue": "Le professeur nous a demandé de créer un magazine en ligne avec WordPress, en portant une attention particulière au référencement (SEO) pour assurer la qualité du contenu. J’ai conçu la structure du site, intégré des éléments interactifs pour rendre la navigation plus vivante et travaillé sur le design et la mise en page, tandis que mon partenaire Benjamin Ferland s’est occupé des aspects graphiques et visuels.",
+    "role": "Conception et design web",
     "technologies": "WordPress et SEO",
     "type": "Équipe de 2",
     "partenaire": "Benjamin Ferland (Web Design)",
