@@ -102,7 +102,7 @@ createApp({
       });
 
     // Animation des projets à l'apparition dans la grille
-    const cartecontainer = document.querySelector(".carte-container");
+    const cartecontainer = document.querySelector(".projets");
       gsap.from(cartecontainer, {
        scrollTrigger: { 
         trigger: ".grille-projets", 
@@ -114,38 +114,60 @@ createApp({
         duration: 0.8,
         ease: "power3.out",
         stagger: 0.2
+      });
+   
+   // Animation du bouton accueil flottant
+   const btnAccueil = document.querySelector(".btn-accueil");
+     // léger mouvement flottant infini
+     gsap.to(btnAccueil, {
+       y: "-=10",
+       duration: 2,
+       repeat: -1,
+       yoyo: true,
+       ease: "sine.inOut"
     });
-  },
+},
 
   // Méthodes
-  methods: {
-    // Active ou désactive le mode sombre
-    toggleDarkMode() {
-      this.isDarkMode = !this.isDarkMode;
-      document.body.classList.toggle("dark-mode", this.isDarkMode);
-      sessionStorage.setItem("darkMode", this.isDarkMode);
-    },
+ methods: {
+  // Active ou désactive le mode sombre
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    document.body.classList.toggle("dark-mode", this.isDarkMode);
+    sessionStorage.setItem("darkMode", this.isDarkMode);
+  },
 
-    // Redirection vers un lien
-    goTo(link) {
-      window.location.href = link;
-    },
+  // Redirection vers un lien
+  goTo(link) {
+    window.location.href = link;
+  },
 
-    // Ouvre un modal pour un projet donné
-    openModal(modalId) {
-      const projet = this.projects.find(p => p.modal === modalId); // Recherche le projet correspondant
-      if (projet) {
-        this.projetActif = projet;  // Stocke le projet actif
-        this.modalActif = projet.modal; // Active le modal
-        document.body.style.overflow = ""; // Permet le scroll ou désactive
-      }
-    },
+  // Ouvre un modal pour un projet donné
+  openModal(modalId) {
+    const projet = this.projects.find(p => p.modal === modalId);
+    if (projet) {
+      this.projetActif = projet;
+      this.modalActif = projet.modal;
 
-    // Ferme le modal actif
-    closeModal() {
-      this.modalActif = null;
-      this.currentProjet = null;
-      document.body.style.overflow = ""; // Restaure le scroll
+       // Bloque le scroll de la page
+       document.body.style.overflow = "hidden";
+
+      // Attendre que le DOM ait créé le modal avant l’animation
+      this.$nextTick(() => {
+        gsap.from(".modal-content", {
+          scale: 0.7,
+          opacity: 0,
+          duration: 0.6,
+          ease: "back.out(1.7)"
+        });
+      });
     }
-  }
+  },
+
+  closeModal() {
+      this.modalActif = null;
+      this.projetActif = null;
+      document.body.style.overflow = ""; // restaure le scroll
+    }
+}
 }).mount("#app"); 

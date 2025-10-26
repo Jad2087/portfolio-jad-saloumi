@@ -156,7 +156,6 @@ section h2 {
 
 .contact p {
   font-weight: bolder;
-  margin: 100 0;
 }
 
 .a-propos-content {
@@ -482,7 +481,7 @@ section h2 {
 /* Bouton Home */
 .btn-accueil { 
   display: block;
-  margin: 100px auto 80px;
+  margin: 100px auto 80px; 
   padding: 0.6rem 1.2rem;
   background-color: #d8b4f8; 
   color: #4a007d;
