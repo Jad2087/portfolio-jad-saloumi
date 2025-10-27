@@ -22,22 +22,26 @@ createApp({
     // Fetch des projets
     fetch("src/projects.json") // Récupère le fichier JSON qui contient les projets
       .then(response => {
+        // Vérifie si la réponse est correcte
         if (!response.ok) throw new Error("Erreur de chargement du JSON");
         return response.json();
       })
       .then(data => {
-        this.projects = data; // stock les projets dans la variable
+        // Stocke les projets récupérer dans la variable "projects" de l'app
+        this.projects = data; 
         this.message = "";
         console.log("Projets chargés :", this.projects);
       })
+       // Gestion des erreurs 
       .catch(erreur => {
         console.error("Erreur :", erreur);
+        // Affiche un message d'erreur 
         this.message = "Erreur de chargement des projets";
       });
 
     // Les animations GSAP
     // Animation des liens de nav
-    const navliens = document.querySelectorAll(".nav");
+    const navliens = document.querySelectorAll(".nav"); // selectionne dans Html le mot nsv
     gsap.from(navliens, {
       x: -20, // Animation qui vient de la gauche
       opacity: 0, // transparent
@@ -47,12 +51,12 @@ createApp({
     });
 
     // Animation du header principal nom et portfolio
-    const nom = document.querySelector(".nom");
-    const portfolio = document.querySelector(".portfolio");
-    gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } })
+    const nom = document.querySelector(".nom"); // selectionne dans Html le mot nom 
+    const portfolio = document.querySelector(".portfolio");  // selectionne dans Html le mot portfolio 
+    gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } }) // cree une timeline GSAP avec des valeurs pour la durée et l'animation
       .from(nom, 
-        { opacity: 0,
-           scale: 0.8 // nom apparaît avec un effet scale
+        { opacity: 0, // debut complètement transparent
+           scale: 0.8  // Commence légèrement réduit 
         })  
       .from(portfolio, 
         { opacity: 0, 
@@ -63,17 +67,22 @@ createApp({
     gsap.registerPlugin(ScrollTrigger);
 
     // Animation de la section À propos
-    const aPropos = document.querySelector(".a-propos-content");
-      // Texte
+    const aPropos = document.querySelector(".a-propos-content"); // selectionne dans html le mot a-propos-content 
+      // Animation du texte "À propos" avec le scroll
       gsap.from(aPropos.querySelector(".texte"), {
-        scrollTrigger: { trigger: aPropos, start: "top 80%", toggleActions: "play none none none" },
-        x: -50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
+        // Utilisation de ScrollTrigger pour déclencher l'animation au scroll
+        scrollTrigger: {
+           trigger: aPropos, // élément qui déclenche l'animation
+           start: "top 80%",  // l'animation quand le haut de 'aPropos' atteint 80% de la fenêtre
+           toggleActions: "play none none none" // 
+          },
+           x: -50, // il vient de la gauche 
+           opacity: 0,
+           duration: 1,  // l'animation dure 1 seconde
+           ease: "power3.out" 
       });
       // Image de moi
-      gsap.from(aPropos.querySelector(".image-container"), {
+      gsap.from(aPropos.querySelector(".image-container"), { // selectionne dans html le mot image-container 
          scrollTrigger: { 
           trigger: aPropos, 
           start: "top 80%", 
@@ -83,11 +92,11 @@ createApp({
           opacity: 0,
           duration: 1,
           ease: "power3.out",
-          delay: 0.2
+          delay: 0.2 // attends 0.2 avant commencer l'animation
       });
 
       // Animation des compétences
-    const skills = document.querySelectorAll(".skill-tag");
+    const skills = document.querySelectorAll(".skill-tag"); // selectionne dans html le mot skill-tag
       gsap.from(skills, {
        scrollTrigger: { 
         trigger: ".skills-tags", 
@@ -98,11 +107,11 @@ createApp({
         opacity: 0,
         duration: 0.8,
         ease: "power3.out",
-        stagger: 0.1
+        stagger: 0.1 //  décale de chaque élément de 0.1s
       });
 
     // Animation des projets à l'apparition dans la grille
-    const cartecontainer = document.querySelector(".projets");
+    const cartecontainer = document.querySelector(".projets"); // selectionne dans html le mot projets
       gsap.from(cartecontainer, {
        scrollTrigger: { 
         trigger: ".grille-projets", 
@@ -117,14 +126,14 @@ createApp({
       });
    
    // Animation du bouton accueil flottant
-   const btnAccueil = document.querySelector(".btn-accueil");
+   const btnAccueil = document.querySelector(".btn-accueil"); // selectionne dans html le mot btn-accueil
      // léger mouvement flottant infini
      gsap.to(btnAccueil, {
-       y: "-=10",
+       y: "-=10", // bouge le bouton vers le haut de sa position placer
        duration: 2,
-       repeat: -1,
-       yoyo: true,
-       ease: "sine.inOut"
+       repeat: -1, // répète l'animation indéfiniment
+       yoyo: true, // animation inverse chaque répétition 
+       ease: "sine.inOut"  // effet de courbe de mouvement douce, type sinusoidal
     });
 },
 
@@ -134,20 +143,20 @@ createApp({
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
     document.body.classList.toggle("dark-mode", this.isDarkMode);
-    sessionStorage.setItem("darkMode", this.isDarkMode);
+    sessionStorage.setItem("darkMode", this.isDarkMode);  // Stocke l'état du mode sombre dans sessionStorage pour pas il revient light mode
   },
 
   // Redirection vers un lien
   goTo(link) {
-    window.location.href = link;
+    window.location.href = link;  // Change url de la page pour naviguer vers le lien cliquer
   },
 
   // Ouvre un modal pour un projet donné
   openModal(modalId) {
-    const projet = this.projects.find(p => p.modal === modalId);
+    const projet = this.projects.find(p => p.modal === modalId); // cherche le projet avec l'id du modal
     if (projet) {
-      this.projetActif = projet;
-      this.modalActif = projet.modal;
+      this.projetActif = projet;  // met le projet actif dans l'app
+      this.modalActif = projet.modal;  // met le projet actif dans l'app
 
        // Bloque le scroll de la page
        document.body.style.overflow = "hidden";
@@ -158,7 +167,7 @@ createApp({
           scale: 0.7,
           opacity: 0,
           duration: 0.6,
-          ease: "back.out(1.7)"
+          ease: "back.out(1.7)" // efet de courbe animation pour un rebond
         });
       });
     }
