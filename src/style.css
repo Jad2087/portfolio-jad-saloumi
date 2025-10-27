@@ -72,6 +72,11 @@ body {
   .projets h2 {
     text-align: center;
   }
+
+  /* PROJETS */
+  .image-container {
+    justify-content: center;
+  }
   
 }
 
@@ -180,7 +185,7 @@ section h2 {
   border-radius: 16px;
   object-fit: cover; 
   display: block;
-  margin-left: 20px; 
+  margin: 0 auto;
 }
 
 /* A propos Content petit écran*/
