@@ -104,7 +104,7 @@ p {
 /* Dark Mode */
 .dark-mode {
   background-color: #2a2233;
-  color: #f0e5ff;
+  color: #ffffff;
 }
 
 .dark-mode h1,
@@ -112,11 +112,11 @@ p {
 .dark-mode h3,
 .dark-mode p,
 .dark-mode li {
-  color: #f0e5ff;
+  color: #ffffff;
 }
 
 .dark-mode a {
-  color: #d8b4f8;
+  color: #ffffff;
 }
 
 .dark-mode a:hover {
