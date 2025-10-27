@@ -15,20 +15,20 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: "Tech";
-    font-weight: bold;
+    margin: 0; 
+    font-family: "Tech";  /* met la police Tech */
+    font-weight: bold;  /* Texte en gras */
 }
 
-/* Navigations */
+/* Style des Navigations */
 .navbar {      
-  padding: 25px 0;      
-  text-align: center;
+  padding: 25px 0;    
+  text-align: center;  /* met le texte au centre */
 }
 
-/* Liens */
+/* Style de chaque nav */
 .nav a {
-  display: inline-block;
+  display: inline-block; 
   font-family: 'Share Tech Mono', monospace;
   color: #000; 
   text-decoration: none;
@@ -36,10 +36,11 @@ body {
   font-size: 1rem;
   padding: 10px 18px;
   margin: 0 8px;
-  transition: all 0.3s ease;
-  box-shadow: none;
+  transition: all 0.3s ease;  
+  box-shadow: none;  
 }
 
+/* Style de chaque nav hover*/
 .nav a:hover {
   background-color: #000; 
   color: #fff;
@@ -47,6 +48,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Media queries pour tablette et mobiles */
 @media (max-width: 768px) {
 
    .nav {
@@ -85,7 +87,7 @@ body {
   font-size: 200px;
 }
 
-/* Nom Ecran */
+/* Nom Ecran plus petit */
 @media (max-width: 900px) {
   .nom {
     font-size: clamp(4rem, 15vw, 10rem);
