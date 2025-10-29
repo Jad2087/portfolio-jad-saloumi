@@ -1,6 +1,5 @@
 // C'est pour quand on clique sur une image elle s'affiche en grand
-
-const images = document.querySelectorAll('.thumbnail'); 
+const images = document.querySelectorAll('.affichage'); 
 
 images.forEach(image => {
   image.addEventListener('click', () => {
