@@ -12,4 +12,5 @@ Dans mon site, j’ai utilisé une navigation mixte. Quand on est sur la page d�
 
  ## Le choix de ta composante Vue.js
  Dark mode / Light mode toggle
-<img width="972" height="831" alt="modal3" src="https://github.com/user-attachments/assets/fc7e80d9-7b6f-4972-b224-86598b6ea610" />
+
+
