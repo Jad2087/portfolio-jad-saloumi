@@ -105,14 +105,14 @@ body {
   }
 }
 
-/* Sections communes */
+/* Sections */
 section {
   margin: -100px auto; 
   padding: 40px 20px; 
   border-radius: 16px;
 }
 
-/* Titres communs */
+/* Titres sections */
 section h2 {
   font-size: 2.2rem;
   font-weight: bold;
@@ -148,6 +148,7 @@ section h2 {
   font-weight: bolder;
 }
 
+/* surligneur */
 .highlight {
   color: #67009e;
   background-color: #f0e5ff;
@@ -156,7 +157,7 @@ section h2 {
   font-weight: bold;
 }
 
-/* Contact */
+/* Contact a-propos */
 .contact {
   margin-top: 50px;
 }
@@ -176,6 +177,7 @@ section h2 {
   flex: 1; 
 }
 
+ /* Image de moi */
 .image-container {
   flex: 0 0 auto; 
   max-width: none; 
@@ -242,6 +244,7 @@ section h2 {
   padding: 0 20px;
 }
 
+/* Skill de chaque tag */
 .skill-tag {
   background-color: #d8b4f8; 
   color: #4a007d; 
@@ -317,6 +320,7 @@ section h2 {
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
+/* Les h3 de chaque carte */
 .carte-projet h3 {
   position: absolute;
   font-weight: bolder;
@@ -329,6 +333,7 @@ section h2 {
   box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
+/* Les images des cartes projets */
 .carte-projet img {
   border: 2px solid black;
   width: 217px;        
@@ -336,6 +341,7 @@ section h2 {
   object-fit: cover;
 }
 
+/* Modal */
 .modal {
   display: none; 
   position: fixed;
@@ -349,6 +355,7 @@ section h2 {
   background-color: rgba(0, 0, 0, 0.7); 
 }
 
+/* Informations des Modal */
 .modal-content {
   background-color: #f6efff;
   margin: auto;
@@ -432,6 +439,7 @@ section h2 {
   font-size: 1rem;
 }
 
+/* Bouton X pour fermer le modal */
 .close {
   position: absolute;
   top: 10px;
@@ -459,6 +467,7 @@ section h2 {
   text-align: center;
 }
 
+/* Contact tags */
 .contact-tags {
   display: flex;
   flex-wrap: wrap;
@@ -469,6 +478,7 @@ section h2 {
   padding: 0 20px;
 }
 
+/* Contact de chaque tag */
 .contact-tag {
   background-color: #d8b4f8; 
   color: #4a007d; 
@@ -485,7 +495,7 @@ section h2 {
   transform: scale(1.05);
 }
 
-/* Bouton Home */
+/* Bouton Home  pour retourner a acceuil */
 .btn-accueil { 
   display: block;
   margin: 100px auto 80px; 
@@ -506,27 +516,7 @@ section h2 {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .contact-grid {
-    gap: 1.2rem;
-  }
-
-  .contact-card {
-    width: 100px;
-    padding: 1rem;
-  }
-
-  .contact-logo {
-    width: 55px;
-    height: 55px;
-  }
-
-  .contact-card p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Vue. js Dark Mode et Light Mode */
+/* Modifier les style quand cest dans Dark Mode */
 .dark-mode {
   background-color: #2a2233; 
   color: #ffffff;  
@@ -544,6 +534,7 @@ section h2 {
   color: #000000;
 }
 
+/* Dark Mode de tous les h2 */
 .dark-mode .a-propos h2,
 .dark-mode .skills h2,
 .dark-mode .projets h2,
@@ -551,12 +542,12 @@ section h2 {
   color: #ffffff;
 }
 
-/* Prénom et Nom */
+/* dark mode Prénom et Nom */
 .dark-mode .nom {
   color: #ffffff; 
 }
 
-/* À propos en blanc */
+/* dark mode À propos en blanc */
 .dark-mode .a-propos p {
     color: #ffffff; 
 }
@@ -566,7 +557,7 @@ section h2 {
   border: 2px solid #f0e5ff;          
 }
 
-/* Compétences et contact */
+/* dark mode Compétences et contact */
 .dark-mode .skill-card,
 .dark-mode .contact-card {
   background-color: #ffffff;
@@ -574,7 +565,7 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* Cartes projets */
+/* dark mode Cartes projets */
 .dark-mode .carte-projet {
   color: #f0e5ff; 
   box-shadow: 4px 4px 0 rgba(163, 120, 211, 0.5); 
@@ -590,7 +581,7 @@ section h2 {
   color: #ffffff;
 }
 
-/* Modale */
+/* dark mode pr modale */
 .dark-mode .modal-content {
   background-color: #1e1a26; 
   color: #f0e5ff; 
@@ -610,13 +601,14 @@ section h2 {
   color: #f0e5ff;
 }
 
+/* dark mode pr modale img  */
 .dark-mode .video-container video,
 .dark-mode .pixelart-image {
   box-shadow: 4px 4px 12px rgba(163, 120, 211, 0.15); 
   border: 2px solid #a278d3;
 }
 
-/* Contact cards*/
+/* dark mode Contact cards*/
 .dark-mode .contact-card {
   background-color: #1e1e1e;
   color: #f0e5ff; 
@@ -628,7 +620,7 @@ section h2 {
   border-color: #d400ff;
 }
 
-/* Footer en blanc */
+/* dark mode Footer en blanc */
 .dark-mode footer {
   color: #f0e5ff; 
 }
