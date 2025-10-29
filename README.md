@@ -2,7 +2,7 @@
 
 
  ## Lien vers le fichier Figma
-Lien :[ https://www.figma.com/design/HJmsws8cr8Vcji1oAR60W5/moodboard-web-5?node-id=0-1&p=f&t=cQy1LjRC2i7d9P4D-0](https://www.figma.com/design/HJmsws8cr8Vcji1oAR60W5/moodboard-web-5?node-id=0-1&t=XySJ4N7F6tmTiB2q-1)
+Lien : [Moodboard Web (Figma)](https://www.figma.com/design/HJmsws8cr8Vcji1oAR60W5/moodboard-web-5?node-id=0-1&p=f&t=cQy1LjRC2i7d9P4D-0)
 
  ## Lien vers le tableau Trello 
 https://trello.com/b/iYwWEapQ/portfolio
