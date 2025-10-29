@@ -1,6 +1,6 @@
  ## Dark MOde
-
-
+<img width="794" height="578" alt="html-darkmode" src="https://github.com/user-attachments/assets/086e5308-0f38-479b-a83f-c2195b125860" />
+<img width="789" height="711" alt="dark-mode" src="https://github.com/user-attachments/assets/1cae330c-250d-45f4-9127-d1bd5a680d9c" />
 
 ## Les modals
 <img width="877" height="815" alt="modal" src="https://github.com/user-attachments/assets/9cdd88f4-1b0b-4260-9986-b1a1bc1a5ac5" />
