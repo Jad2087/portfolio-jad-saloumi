@@ -172,7 +172,7 @@ section h2 {
 }
 
 .contact a:hover {
-  color: #67009e;
+  color:  #67009e;
 }
 
 .a-propos-content {
@@ -193,7 +193,7 @@ section h2 {
 }
 
 .image-container img {
-  max-height: 480px; 
+  max-height: 500px; 
   width: 350px;       
   border-radius: 16px;
   object-fit: cover; 
