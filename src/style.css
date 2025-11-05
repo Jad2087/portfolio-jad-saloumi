@@ -166,6 +166,15 @@ section h2 {
   font-weight: bolder;
 }
 
+/* Liens dans la section contact */
+.contact a {
+  color: inherit;      
+}
+
+.contact a:hover {
+  color: #67009e;
+}
+
 .a-propos-content {
   display: flex;
   align-items: center;
