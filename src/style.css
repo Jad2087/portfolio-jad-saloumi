@@ -439,22 +439,6 @@ section h2 {
   font-size: 1rem;
 }
 
-/* Bouton X pour fermer le modal */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  color: #67009e;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #3b0069;
-}
-
 /* Contact h2 */
 #contact h2{
   font-family: "Anton";

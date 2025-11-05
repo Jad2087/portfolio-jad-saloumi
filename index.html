@@ -158,12 +158,9 @@
 </section>
 
 <!-- Modal des projets afficher une fois cliquer -->
-<div v-if="modalActif" class="modal" style="display:block">
+<div v-if="modalActif" class="modal" style="display:block" @click.self="closeModal">
   <!-- Contenu principal du modal -->
   <div class="modal-content">
-
-    <!-- Bouton de fermeture du modal -->
-    <span class="close" @click="closeModal()">&times;</span>
 
     <!-- Titre du projet -->
     <h3>{{ projetActif.title }}</h3>
